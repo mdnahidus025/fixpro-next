@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router';
-import TextAnimation from '../../components/elements/TextAnimation';
+import React from 'react'; 
+import TextAnimation from '@/components/elements/TextAnimation';
 import type { SecProp } from './AboutOne';
+import Link from 'next/link';
 
 interface PricingFeature {
     id: number;
@@ -93,7 +93,7 @@ const PricingOne: React.FC<SecProp> = ({ secClass = "" }) => {
                                     ))}
                                 </ul>
                                 <div className="pricing-one__btn-box">
-                                    <Link to="/pricing" className="thm-btn">
+                                    <Link href="/pricing" className="thm-btn">
                                         Choose Plan<span className="icon-arrow-right"></span>
                                     </Link>
                                 </div>

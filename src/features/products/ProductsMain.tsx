@@ -2,6 +2,7 @@ import React from 'react';
 import AllProducts from './AllProducts';
 import ProductSidebar from './ProductSidebar';
 
+
 const ProductsMain: React.FC = () => {
     return (
         <section className="product">

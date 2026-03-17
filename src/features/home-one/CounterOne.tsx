@@ -1,8 +1,9 @@
+"use client";
 import React from 'react';
 
-import counterOneBg from '../../assets/images/backgrounds/counter-one-bg.jpg';
-import CounterUp from '../../components/elements/CounterUp';
-import JarallaxSection from '../../components/elements/JarallaxSection';
+import counterOneBg from '@/assets/images/backgrounds/counter-one-bg.jpg';
+import CounterUp from '@/components/elements/CounterUp';
+import JarallaxSection from '@/components/elements/JarallaxSection'; 
 
 interface CounterItem {
     id: number;
@@ -46,7 +47,7 @@ const counterItems: CounterItem[] = [
 const CounterOne: React.FC = () => {
     return (
         <JarallaxSection className="counter-one"
-            imgSrc={counterOneBg}
+            imgSrc={counterOneBg.src}
             overlayOpacity={0.8}
         >
             <div className="container">

@@ -1,19 +1,22 @@
+"use client";
+
 import React from 'react';
-import { Link } from 'react-router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import testimonialShape1 from '../../assets/images/shapes/testimonial-one-shape-1.png';
-import testimonialShape2 from '../../assets/images/shapes/testimonial-one-shape-2.png';
-import testimonialImg1 from '../../assets/images/testimonial/testimonial-1-1.jpg';
-import testimonialImg2 from '../../assets/images/testimonial/testimonial-1-2.jpg';
-import testimonialImg3 from '../../assets/images/testimonial/testimonial-1-3.jpg';
-import TextAnimation from '../../components/elements/TextAnimation';
+import testimonialShape1 from '@/assets/images/shapes/testimonial-one-shape-1.png';
+import testimonialShape2 from '@/assets/images/shapes/testimonial-one-shape-2.png';
+import testimonialImg1 from '@/assets/images/testimonial/testimonial-1-1.jpg';
+import testimonialImg2 from '@/assets/images/testimonial/testimonial-1-2.jpg';
+import testimonialImg3 from '@/assets/images/testimonial/testimonial-1-3.jpg';
+import TextAnimation from '@/components/elements/TextAnimation';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 interface Testimonial {
     id: number;
     name: string;
     role: string;
-    image: string;
+    image: string | StaticImageData;
     rating: number;
     text: string;
 }
@@ -50,10 +53,10 @@ const TestimonialOne: React.FC = () => {
         <section className="testimonial-one">
             <div className="testimonial-one__bg" ></div>
             <div className="testimonial-one__shape-1 float-bob-x">
-                <img src={testimonialShape1} alt="shape 1" />
+                <Image src={testimonialShape1} style={{ width: "auto", height: "auto" }} alt="shape 1" />
             </div>
             <div className="testimonial-one__shape-2 float-bob-y">
-                <img src={testimonialShape2} alt="shape 2" />
+                <Image src={testimonialShape2} style={{ width: "auto", height: "auto" }} alt="shape 2" />
             </div>
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style1">
@@ -79,7 +82,7 @@ const TestimonialOne: React.FC = () => {
                             },
                             992: {
                                 slidesPerView: 2,
-                            }, 
+                            },
                         }}>
 
 
@@ -95,12 +98,12 @@ const TestimonialOne: React.FC = () => {
                                             <div className="testimonial-one__client-info">
                                                 <div className="testimonial-one__client-img-box">
                                                     <div className="testimonial-one__client-img">
-                                                        <img src={testimonial.image} alt={testimonial.name} />
+                                                        <Image src={testimonial.image} style={{width:"auto", height:"auto"}} alt={testimonial.name} />
                                                     </div>
                                                 </div>
                                                 <div className="testimonial-one__client-content">
                                                     <h3 className="testimonial-one__client-name">
-                                                        <Link to="/testimonials">{testimonial.name}</Link>
+                                                        <Link href="/testimonials">{testimonial.name}</Link>
                                                     </h3>
                                                     <p className="testimonial-one__client-sub-title">{testimonial.role}</p>
                                                 </div>

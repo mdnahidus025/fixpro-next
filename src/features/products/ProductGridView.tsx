@@ -1,6 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router'; 
-import type { ProductItem } from '../../contents/products/productData';
+"use client";
+import { ProductItem } from '@/contents/products/productData';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react'; 
 
 
 type ProductProps = {
@@ -11,8 +13,8 @@ const ProductGridView: React.FC<ProductProps> = ({ product }) => {
         <div className="col-xl-4 col-lg-6 col-md-6">
             <div className="single-product-style1">
                 <div className="single-product-style1__img">
-                    <img src={product?.image} alt="" />
-                    <img src={product?.image} alt="" />
+                    <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="" />
+                    <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="" />
                     {
                         product?.isNew || product?.discouunt
                             ?
@@ -59,7 +61,7 @@ const ProductGridView: React.FC<ProductProps> = ({ product }) => {
                 <div className="single-product-style1__content">
                     <div className="single-product-style1__content-left">
                         <h4>
-                            <Link to="/inner/product-details">
+                            <Link href="/product-details">
                                 {product?.title}
                             </Link>
                         </h4>

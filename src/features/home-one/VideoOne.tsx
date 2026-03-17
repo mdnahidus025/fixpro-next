@@ -1,13 +1,15 @@
+"use client";
 import React, { useState } from 'react';
 
-import videoOneBg from '../../assets/images/backgrounds/video-one-bg.jpg';
-import videoOneContactImg1 from '../../assets/images/resources/video-one-contact-img-1.png';
-import JarallaxSection from '../../components/elements/JarallaxSection';
-import CustomSelect from '../../components/elements/CustomSelect';
-import FadeInAdvanced from '../../components/elements/FadeInAdvanced';
-import TextAnimation from '../../components/elements/TextAnimation';
-import SectionWrapper from '../../components/elements/SectionWrapper';
-import useFixproContext from '../../components/context/useFixproContext';
+import videoOneBg from '@/assets/images/backgrounds/video-one-bg.jpg';
+import videoOneContactImg1 from '@/assets/images/resources/video-one-contact-img-1.png';
+import JarallaxSection from '@/components/elements/JarallaxSection';
+import CustomSelect from '@/components/elements/CustomSelect';
+import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
+import TextAnimation from '@/components/elements/TextAnimation';
+import SectionWrapper from '@/components/elements/SectionWrapper';
+import useFixproContext from '@/components/context/useFixproContext';
+import Image from 'next/image';
 
 interface ContactInfo {
     id: number;
@@ -46,7 +48,7 @@ const contactInfoItems: ContactInfo[] = [
 ];
 
 const VideoOne: React.FC = () => {
-    const {handleVideoClick} = useFixproContext();
+    const { handleVideoClick } = useFixproContext();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -73,7 +75,7 @@ const VideoOne: React.FC = () => {
 
     return (
         <SectionWrapper id='contact' className="video-one">
-            <JarallaxSection className="video-one__bg-color" imgSrc={videoOneBg} overlayOpacity={0.8} >
+            <JarallaxSection className="video-one__bg-color" imgSrc={videoOneBg.src} overlayOpacity={0.8} >
 
                 <div >
                 </div>
@@ -100,7 +102,7 @@ const VideoOne: React.FC = () => {
                         <a
                             href="#"
                             onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")}
-                            className="video-popup" 
+                            className="video-popup"
                             rel="noreferrer"
                         >
                             <div className="video-one__video-icon">
@@ -111,7 +113,7 @@ const VideoOne: React.FC = () => {
                     </div>
                     <div className="video-one__contact-box">
                         <FadeInAdvanced className='video-one__img-1' variant='slideInRight' delay={100} threshold={0.05}>
-                            <img src={videoOneContactImg1} alt="Image" className="float-bob-x" />
+                            <Image src={videoOneContactImg1} style={{ width: "auto", height: "auto" }} alt="Image" className="float-bob-x" />
                         </FadeInAdvanced>
                         <div className="row">
                             <div className="col-xl-8 col-lg-7">

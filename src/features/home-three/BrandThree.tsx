@@ -1,10 +1,10 @@
 import React from 'react';
 
-import brand2Img1 from '../../assets/images/brand/brand-2-1.png';
-import brand2Img2 from '../../assets/images/brand/brand-2-2.png';
-import brand2Img3 from '../../assets/images/brand/brand-2-3.png';
-import brand2Img4 from '../../assets/images/brand/brand-2-4.png';
-import brand2Img5 from '../../assets/images/brand/brand-2-5.png';
+import brand2Img1 from '@/assets/images/brand/brand-2-1.png';
+import brand2Img2 from '@/assets/images/brand/brand-2-2.png';
+import brand2Img3 from '@/assets/images/brand/brand-2-3.png';
+import brand2Img4 from '@/assets/images/brand/brand-2-4.png';
+import brand2Img5 from '@/assets/images/brand/brand-2-5.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 interface BrandItem {

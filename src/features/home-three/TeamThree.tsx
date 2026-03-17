@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import team3Img1 from '../../assets/images/team/team-3-1.jpg';
-import team3Img2 from '../../assets/images/team/team-3-2.jpg';
-import team3Img3 from '../../assets/images/team/team-3-3.jpg';
-import TextAnimation from '../../components/elements/TextAnimation';
-import FadeInAdvanced, { type AnimationVariant } from '../../components/elements/FadeInAdvanced';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import team3Img1 from '@/assets/images/team/team-3-1.jpg';
+import team3Img2 from '@/assets/images/team/team-3-2.jpg';
+import team3Img3 from '@/assets/images/team/team-3-3.jpg';
+import TextAnimation from '@/components/elements/TextAnimation';
+import FadeInAdvanced, { type AnimationVariant } from '@/components/elements/FadeInAdvanced';
+import SectionWrapper from '@/components/elements/SectionWrapper';
 
 interface SocialLink {
     icon: string;

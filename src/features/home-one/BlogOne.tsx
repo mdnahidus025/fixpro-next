@@ -1,13 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React from 'react'; 
 
-import blogShape1 from '../../assets/images/shapes/blog-one-shape-1.png';
-import blogShape2 from '../../assets/images/shapes/blog-one-shape-2.png';
+import blogShape1 from '@/assets/images/shapes/blog-one-shape-1.png';
+import blogShape2 from '@/assets/images/shapes/blog-one-shape-2.png';
 
-import FadeInAdvanced  from '../../components/elements/FadeInAdvanced';
-import TextAnimation from '../../components/elements/TextAnimation';
-import { blogOnePosts } from '../../contents/blog/blogData';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import FadeInAdvanced  from '@/components/elements/FadeInAdvanced';
+import TextAnimation from '@/components/elements/TextAnimation';
+import { blogOnePosts } from '@/contents/blog/blogData';
+import SectionWrapper from '@/components/elements/SectionWrapper';
+import Link from 'next/link';
+import Image from 'next/image';
 
 
 
@@ -15,10 +16,10 @@ const BlogOne: React.FC = () => {
     return (
         <SectionWrapper id='blog' className="blog-one">
             <div className="blog-one__shape-1 float-bob-x">
-                <img src={blogShape1} alt="shape 1" />
+                <Image src={blogShape1} width={600} height={600} alt="shape 1" />
             </div>
             <div className="blog-one__shape-2 rotate-me">
-                <img src={blogShape2} alt="shape 2" />
+                <Image src={blogShape2} width={300} height={300} alt="shape 2" />
             </div>
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style1">
@@ -40,9 +41,9 @@ const BlogOne: React.FC = () => {
                             <div className="blog-one__single">
                                 <div className="blog-one__img-box">
                                     <div className="blog-one__img">
-                                        <img src={post.image} alt={post.title} />
+                                        <Image src={post.image} style={{width:"auto", height:"auto"}} alt={post.title} />
                                         <div className="blog-one__plus">
-                                            <Link to="/blog-details">
+                                            <Link href="/blog-details">
                                                 <i className="fa fa-plus"></i>
                                             </Link>
                                         </div>
@@ -63,10 +64,10 @@ const BlogOne: React.FC = () => {
                                         </li>
                                     </ul>
                                     <h3 className="blog-one__title">
-                                        <Link to="/blog-details">{post.title}</Link>
+                                        <Link href="/blog-details">{post.title}</Link>
                                     </h3>
                                     <div className="blog-one__read-more">
-                                        <Link to="/blog-details">
+                                        <Link href="/blog-details">
                                             Learn More <span className="icon-arrow-right"></span>
                                         </Link>
                                     </div>

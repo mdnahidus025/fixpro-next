@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import CustomSelect from "../../components/elements/CustomSelect";
+"use client";
+import CustomSelect from "@/components/elements/CustomSelect";
+import React, { useState } from "react"; 
 
 interface FormFields {
     name: string;

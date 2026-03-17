@@ -1,6 +1,6 @@
 import React from 'react';
-import FadeInAdvanced, { type AnimationVariant } from '../../components/elements/FadeInAdvanced';
-import CounterUp from '../../components/elements/CounterUp';
+import FadeInAdvanced, { type AnimationVariant } from '@/components/elements/FadeInAdvanced';
+import CounterUp from '@/components/elements/CounterUp';
 
 interface CounterItem {
     id: number;

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router';
-import type { AnimationVariant } from '../../components/elements/FadeInAdvanced';
-import FadeInAdvanced from '../../components/elements/FadeInAdvanced';
+
+import FadeInAdvanced, { AnimationVariant } from '@/components/elements/FadeInAdvanced';
+import Link from 'next/link';
+import React from 'react'; 
 
 interface ServiceItem {
     id: number;
@@ -95,10 +95,10 @@ const ServicesSec: React.FC = () => {
                                 </div>
                                 <p className="services-three__sub-title">{service.subTitle}</p>
                                 <h3 className="services-three__title">
-                                    <Link to={service.path}>{service.title}</Link>
+                                    <Link href={service.path}>{service.title}</Link>
                                 </h3>
                                 <p className="services-three__text">{service.text}</p>
-                                <Link to={service.path} className="services-three__learn-more">
+                                <Link href={service.path} className="services-three__learn-more">
                                     Learn More<span className="icon-arrow-right"></span>
                                 </Link>
                             </div>

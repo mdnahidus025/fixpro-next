@@ -15,7 +15,7 @@ import BlogList11 from '@/assets/images/blog/blog-list-1-1.jpg';
 import BlogList12 from '@/assets/images/blog/blog-list-1-2.jpg';
 import BlogList13 from '@/assets/images/blog/blog-list-1-3.jpg';
 
-import type { AnimationVariant } from '../../components/elements/FadeInAdvanced';
+import type { AnimationVariant } from '@/components/elements/FadeInAdvanced';
 
 
 interface BlogPost {

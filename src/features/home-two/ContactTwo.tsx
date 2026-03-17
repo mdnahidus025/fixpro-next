@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
-import contactOneMap from '../../assets/images/shapes/contact-one-map.png';
-import contactPopupImg1 from '../../assets/images/resources/contact-one-popup-img-1.jpg';
-import contactPopupImg2 from '../../assets/images/resources/contact-one-popup-img-2.jpg';
-import contactPopupImg3 from '../../assets/images/resources/contact-one-popup-img-3.jpg';
-import contactPopupImg4 from '../../assets/images/resources/contact-one-popup-img-4.jpg';
-import contactPopupImg5 from '../../assets/images/resources/contact-one-popup-img-5.jpg';
-import TextAnimation from '../../components/elements/TextAnimation';
-import FadeInAdvanced from '../../components/elements/FadeInAdvanced';
-import CustomSelect from '../../components/elements/CustomSelect';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import contactOneMap from '@/assets/images/shapes/contact-one-map.png';
+import contactPopupImg1 from '@/assets/images/resources/contact-one-popup-img-1.jpg';
+import contactPopupImg2 from '@/assets/images/resources/contact-one-popup-img-2.jpg';
+import contactPopupImg3 from '@/assets/images/resources/contact-one-popup-img-3.jpg';
+import contactPopupImg4 from '@/assets/images/resources/contact-one-popup-img-4.jpg';
+import contactPopupImg5 from '@/assets/images/resources/contact-one-popup-img-5.jpg';
+import TextAnimation from '@/components/elements/TextAnimation';
+import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
+import CustomSelect from '@/components/elements/CustomSelect';
+import SectionWrapper from '@/components/elements/SectionWrapper';
 interface MapPoint {
     id: number;
     pointClass: string;

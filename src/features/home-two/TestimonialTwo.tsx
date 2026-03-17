@@ -3,10 +3,10 @@ import { Link } from 'react-router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Autoplay, Navigation } from 'swiper/modules';
-import testimonialImg1 from '../../assets/images/testimonial/testimonial-2-1.jpg';
-import testimonialImg2 from '../../assets/images/testimonial/testimonial-2-2.jpg';
-import testimonialImg3 from '../../assets/images/testimonial/testimonial-2-3.jpg';
-import TextAnimation from '../../components/elements/TextAnimation';
+import testimonialImg1 from '@/assets/images/testimonial/testimonial-2-1.jpg';
+import testimonialImg2 from '@/assets/images/testimonial/testimonial-2-2.jpg';
+import testimonialImg3 from '@/assets/images/testimonial/testimonial-2-3.jpg';
+import TextAnimation from '@/components/elements/TextAnimation';
 
 interface TestimonialItem {
     id: number;

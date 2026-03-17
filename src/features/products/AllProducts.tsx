@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import CustomSelect from '../../components/elements/CustomSelect';
+"use client";
+
+import React, { useState } from 'react'; 
 import ProductGridView from './ProductGridView';
-import ProductListView from './ProductListView';
-import { productsList, type ProductItem } from '../../contents/products/productData';
+import ProductListView from './ProductListView'; 
+import { ProductItem, productsList } from '@/contents/products/productData';
+import CustomSelect from '@/components/elements/CustomSelect';
 const AllProducts: React.FC = () => {
     const [sortValue, setSortValue] = useState<string>("Sort by popular");
 

@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router';
-import shapeOne from "../../assets/images/shapes/main-slider-two-shape-1.png"
-import slideImg from "../../assets/images/resources/main-slider-two-img-1-1.jpg"
-import slideImgSmall from "../../assets/images/resources/main-slider-two-small-img-1-1.jpg"
+import shapeOne from "@/assets/images/shapes/main-slider-two-shape-1.png"
+import slideImg from "@/assets/images/resources/main-slider-two-img-1-1.jpg"
+import slideImgSmall from "@/assets/images/resources/main-slider-two-small-img-1-1.jpg"
 
-import slideImgTwo from "../../assets/images/resources/main-slider-two-img-1-2.jpg"
-import slideImgSmallTwo from "../../assets/images/resources/main-slider-two-small-img-1-2.jpg"
+import slideImgTwo from "@/assets/images/resources/main-slider-two-img-1-2.jpg"
+import slideImgSmallTwo from "@/assets/images/resources/main-slider-two-small-img-1-2.jpg"
 
-import slideImgThree from "../../assets/images/resources/main-slider-two-img-1-3.jpg"
-import slideImgSmallThree from "../../assets/images/resources/main-slider-two-small-img-1-3.jpg"
+import slideImgThree from "@/assets/images/resources/main-slider-two-img-1-3.jpg"
+import slideImgSmallThree from "@/assets/images/resources/main-slider-two-small-img-1-3.jpg"
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import useFixproContext from '../../components/context/useFixproContext';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import useFixproContext from '@/components/context/useFixproContext';
+import SectionWrapper from '@/components/elements/SectionWrapper';
 
 const MainSliderTwo: React.FC = () => {
     const { handleVideoClick } = useFixproContext();

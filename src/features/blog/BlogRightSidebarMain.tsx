@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import BlogSidebar from './BlogSidebar';
-import { Link } from 'react-router';
-import { blogPosts } from '../../contents/blog/blogData';
+import BlogSidebar from './BlogSidebar';  
+import Image from 'next/image';
+import Link from 'next/link';
+import { blogPosts } from '@/contents/blog/blogData';
 
 const BlogRightSidebarMain: React.FC = () => {
 
@@ -30,9 +31,9 @@ const BlogRightSidebarMain: React.FC = () => {
                                     <div className="blog-one__single">
                                         <div className="blog-one__img-box">
                                             <div className="blog-one__img">
-                                                <img src={post.image} alt={post.title} />
+                                                <Image src={post.image} alt={post.title} style={{width:"auto", height:"auto"}}/>
                                                 <div className="blog-one__plus">
-                                                    <Link to="/blog-details">
+                                                    <Link href="/blog-details">
                                                         <i className="fa fa-plus"></i>
                                                     </Link>
                                                 </div>
@@ -53,10 +54,10 @@ const BlogRightSidebarMain: React.FC = () => {
                                                 </li>
                                             </ul>
                                             <h3 className="blog-one__title">
-                                                <Link to="/blog-details">{post.title}</Link>
+                                                <Link href="/blog-details">{post.title}</Link>
                                             </h3>
                                             <div className="blog-one__read-more">
-                                                <Link to="/blog-details">
+                                                <Link href="/blog-details">
                                                     Learn More <span className="icon-arrow-right"></span>
                                                 </Link>
                                             </div>

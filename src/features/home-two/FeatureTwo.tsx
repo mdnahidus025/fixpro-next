@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import featureTwoShape1 from '../../assets/images/shapes/feature-two-shape-1.png';
-import featureTwoSingleShape1 from '../../assets/images/shapes/feature-two-single-shape-1.png';
-import FadeInAdvanced, { type AnimationVariant } from '../../components/elements/FadeInAdvanced';
-import TextAnimation from '../../components/elements/TextAnimation';
+import featureTwoShape1 from '@/assets/images/shapes/feature-two-shape-1.png';
+import featureTwoSingleShape1 from '@/assets/images/shapes/feature-two-single-shape-1.png';
+import FadeInAdvanced, { type AnimationVariant } from '@/components/elements/FadeInAdvanced';
+import TextAnimation from '@/components/elements/TextAnimation';
 
 interface FeatureItem {
     id: number;

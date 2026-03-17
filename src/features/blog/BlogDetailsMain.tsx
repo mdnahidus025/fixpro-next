@@ -1,11 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React from 'react'; 
 import BlogSidebar from './BlogSidebar';
-import BlogDetailsImg1 from '../../assets/images/blog/blog-details-img-1.jpg';
-import BlogDetailsImgBoxImg1 from '../../assets/images/blog/blog-details-img-box-img-1.jpg';
-import BlogDetailsImgBoxImg2 from '../../assets/images/blog/blog-details-img-box-img-2.jpg';
-import Comment11 from '../../assets/images/blog/comment-1-1.jpg';
-import Comment12 from '../../assets/images/blog/comment-1-2.jpg';
+import BlogDetailsImg1 from '@/assets/images/blog/blog-details-img-1.jpg';
+import BlogDetailsImgBoxImg1 from '@/assets/images/blog/blog-details-img-box-img-1.jpg';
+import BlogDetailsImgBoxImg2 from '@/assets/images/blog/blog-details-img-box-img-2.jpg';
+import Comment11 from '@/assets/images/blog/comment-1-1.jpg';
+import Comment12 from '@/assets/images/blog/comment-1-2.jpg';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const BlogDetailsMain: React.FC = () => {
     return (
@@ -15,7 +16,7 @@ const BlogDetailsMain: React.FC = () => {
                     <div className="col-xl-8 col-lg-7">
                         <div className="blog-details__left">
                             <div className="blog-details__img">
-                                <img src={BlogDetailsImg1} />
+                                <Image src={BlogDetailsImg1} style={{width:"auto", height:"auto"}} alt='Image' />
                                 <div className="blog-details__date">
                                     <p>12<br />Nov</p>
                                 </div>
@@ -27,10 +28,10 @@ const BlogDetailsMain: React.FC = () => {
                                     </div>
                                     <ul className="blog-details__meta list-unstyled">
                                         <li>
-                                            <Link to="#"><span className="fas fa-comments"></span>Comments (05)</Link>
+                                            <Link href="#"><span className="fas fa-comments"></span>Comments (05)</Link>
                                         </li>
                                         <li>
-                                            <Link to="#"><span className="fas fa-clock"></span>4 Min Read</Link>
+                                            <Link href="#"><span className="fas fa-clock"></span>4 Min Read</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -53,12 +54,12 @@ const BlogDetailsMain: React.FC = () => {
                                     <div className="row">
                                         <div className="col-xl-6">
                                             <div className="blog-details__img-box-img">
-                                                <img src={BlogDetailsImgBoxImg1} />
+                                                <Image src={BlogDetailsImgBoxImg1} style={{width:"auto", height:"auto"}} alt=''/>
                                             </div>
                                         </div>
                                         <div className="col-xl-6">
                                             <div className="blog-details__img-box-img">
-                                                <img src={BlogDetailsImgBoxImg2} />
+                                                <Image src={BlogDetailsImgBoxImg2} style={{width:"auto", height:"auto"}} alt=''/>
                                             </div>
                                         </div>
                                     </div>
@@ -68,30 +69,30 @@ const BlogDetailsMain: React.FC = () => {
                                         <h3 className="blog-details__tag-title">Tags :</h3>
                                         <ul className="blog-details__tag-list list-unstyled">
                                             <li>
-                                                <Link to="#">Analysis</Link>
+                                                <Link href="#">Analysis</Link>
                                             </li>
                                             <li>
-                                                <Link to="#">Planning</Link>
+                                                <Link href="#">Planning</Link>
                                             </li>
                                             <li>
-                                                <Link to="#">Management</Link>
+                                                <Link href="#">Management</Link>
                                             </li>
                                         </ul>
                                     </div>
                                     <div className="blog-details__share-box">
                                         <h3 className="blog-details__share-title">Share :</h3>
                                         <div className="blog-details__share">
-                                            <Link to="#"><span className="icon-facebook"></span></Link>
-                                            <Link to="#"><span className="icon-xpa"></span></Link>
-                                            <Link to="#"><span className="icon-link-in"></span></Link>
-                                            <Link to="#"><span className="icon-instagram"></span></Link>
+                                            <Link href="#"><span className="icon-facebook"></span></Link>
+                                            <Link href="#"><span className="icon-xpa"></span></Link>
+                                            <Link href="#"><span className="icon-link-in"></span></Link>
+                                            <Link href="#"><span className="icon-instagram"></span></Link>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="comment-one">
                                     <div className="comment-one__single">
                                         <div className="comment-one__image">
-                                            <img src={Comment11} />
+                                            <Image src={Comment11} width={70} height={70} alt=''/>
                                         </div>
                                         <div className="comment-one__content">
                                             <h3>Theresa Webb</h3>
@@ -101,14 +102,14 @@ const BlogDetailsMain: React.FC = () => {
                                                 else he endures pains to avoid worse pains to the selection point. But
                                                 in certain to all this circumstances</p>
                                             <div className="comment-one__btn-box">
-                                                <Link to="/blog-details" className="comment-one__btn"><span
+                                                <Link href="/blog-details" className="comment-one__btn"><span
                                                     className="icon-share-alt"></span>Reply</Link>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="comment-one__single">
                                         <div className="comment-one__image">
-                                            <img src={Comment12} />
+                                            <Image src={Comment12} width={70} height={70} alt=''/>
                                         </div>
                                         <div className="comment-one__content">
                                             <h3>Cameron Williamson</h3>
@@ -118,7 +119,7 @@ const BlogDetailsMain: React.FC = () => {
                                                 else he endures pains to avoid worse pains to the selection point. But
                                                 in certain to all this circumstances</p>
                                             <div className="comment-one__btn-box">
-                                                <Link to="/blog-details" className="comment-one__btn"><span
+                                                <Link href="/blog-details" className="comment-one__btn"><span
                                                     className="icon-share-alt"></span>Reply</Link>
                                             </div>
                                         </div>

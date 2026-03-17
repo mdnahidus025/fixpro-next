@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router';
 
-import project3Img1 from '../../assets/images/project/project-3-1.jpg';
-import project3Img3 from '../../assets/images/project/project-3-3.jpg';
-import project3Img4 from '../../assets/images/project/project-3-4.jpg';
-import project3Img5 from '../../assets/images/project/project-3-5.jpg';
-import TextAnimation from '../../components/elements/TextAnimation';
-import FadeInAdvanced, { type AnimationVariant } from '../../components/elements/FadeInAdvanced';
+import project3Img1 from '@/assets/images/project/project-3-1.jpg';
+import project3Img3 from '@/assets/images/project/project-3-3.jpg';
+import project3Img4 from '@/assets/images/project/project-3-4.jpg';
+import project3Img5 from '@/assets/images/project/project-3-5.jpg';
+import TextAnimation from '@/components/elements/TextAnimation';
+import FadeInAdvanced, { type AnimationVariant } from '@/components/elements/FadeInAdvanced';
 import Lightbox from 'yet-another-react-lightbox';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import SectionWrapper from '@/components/elements/SectionWrapper';
 
 type FilterCategory = 'office' | 'house' | 'corporate' | 'all';
 

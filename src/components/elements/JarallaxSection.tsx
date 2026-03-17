@@ -1,37 +1,22 @@
 "use client";
-import { useEffect, useRef } from "react";
-import type { ReactNode, ElementType } from "react";
-import { jarallax } from "jarallax";
 
-// If you want to use video backgrounds
-// import { jarallaxVideo } from "jarallax/dist/jarallax-video.esm.js";
+import { useEffect, useRef } from "react";
+import type { ReactNode } from "react";
 
 interface JarallaxSectionProps {
     children: ReactNode;
     className?: string;
-
-    // HTML tag to use
-    as?: ElementType; // e.g., "section", "div", "article", "header", etc.
-
-    // Image/Video settings
     imgSrc?: string;
-    videoSrc?: string; // YouTube or Vimeo URL
-
-    // Parallax settings
-    speed?: number; // -1.0 to 2.0 (0.5 is default)
+    videoSrc?: string;
+    speed?: number;
     type?: "scroll" | "scale" | "opacity" | "scroll-opacity" | "scale-opacity";
-
-    // Position settings
-    imgPosition?: string; // e.g., "50% 50%", "center center", "top left"
+    imgPosition?: string;
     imgRepeat?: "no-repeat" | "repeat";
     imgSize?: "cover" | "contain" | "auto" | string;
-
-    // Advanced settings
     zIndex?: number;
     disableParallax?: boolean | RegExp | (() => boolean);
     disableVideo?: boolean | RegExp | (() => boolean);
-
-    // Custom overlay
+    absoluteContent?: ReactNode;
     overlayColor?: string;
     overlayOpacity?: number;
 }
@@ -39,7 +24,6 @@ interface JarallaxSectionProps {
 export default function JarallaxSection({
     children,
     className = "",
-    as: Component = "section", // Default to section
     imgSrc,
     videoSrc,
     speed = 0.5,
@@ -50,19 +34,18 @@ export default function JarallaxSection({
     zIndex = -100,
     disableParallax,
     disableVideo,
+    absoluteContent,
     overlayColor = "rgba(0, 0, 0, 1)",
-    overlayOpacity = 0.9,
+    overlayOpacity = 0.8,
 }: JarallaxSectionProps) {
-    const jarallaxRef = useRef<HTMLElement>(null);
+    const jarallaxRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        // Store ref value in a variable to avoid stale closure in cleanup
         const element = jarallaxRef.current;
+        if (!element) return;
 
-        // Uncomment if using video
-        // jarallaxVideo();
-
-        if (element) {
+        //  Dynamic import keeps jarallax out of SSR module evaluation
+        import("jarallax").then(({ jarallax }) => {
             jarallax(element, {
                 speed,
                 type,
@@ -75,13 +58,12 @@ export default function JarallaxSection({
                 disableParallax,
                 disableVideo,
             });
-        }
+        });
 
-        // Cleanup
         return () => {
-            if (element) {
+            import("jarallax").then(({ jarallax }) => {
                 jarallax(element, "destroy");
-            }
+            });
         };
     }, [
         speed,
@@ -97,7 +79,7 @@ export default function JarallaxSection({
     ]);
 
     return (
-        <Component ref={jarallaxRef} className={`jarallax ${className}`}>
+        <div ref={jarallaxRef} className={`jarallax ${className}`}>
             {overlayColor && (
                 <div
                     className="jarallax-overlay"
@@ -113,9 +95,10 @@ export default function JarallaxSection({
                     }}
                 />
             )}
+            {absoluteContent}
             <div className="jarallax-content" style={{ position: "relative", zIndex: 1 }}>
                 {children}
             </div>
-        </Component>
+        </div>
     );
 }

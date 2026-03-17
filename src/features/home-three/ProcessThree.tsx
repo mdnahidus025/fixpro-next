@@ -1,8 +1,8 @@
 import React from 'react';
 
-import processTwoShape1 from '../../assets/images/shapes/process-two-shape-1.png';
-import FadeInAdvanced from '../../components/elements/FadeInAdvanced';
-import TextAnimation from '../../components/elements/TextAnimation';
+import processTwoShape1 from '@/assets/images/shapes/process-two-shape-1.png';
+import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
+import TextAnimation from '@/components/elements/TextAnimation';
 
 interface ProcessItem {
     id: number;

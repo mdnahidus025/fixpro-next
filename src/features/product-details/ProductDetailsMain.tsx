@@ -1,24 +1,25 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
+"use client";
+import React, { useState } from 'react'; 
 import QuantityOfProduct from './QuantityOfProduct';
 import NavForSlider from './NavForSlider';
+import { useRouter } from "next/navigation";
 
 const ProductDetailsMain: React.FC = () => {
     const [quantityValue, setQuantityValue] = useState(1); 
     const [selectedSize, setSelectedSize] = useState('XXL');
-    const sizes = ['XXL', 'XL', 'XS', 'M', 'L', 'S'];
-    const navigate = useNavigate();
+    const sizes = ['XXL', 'XL', 'XS', 'M', 'L', 'S']; 
+    const router = useRouter();
     const handleSizeChange = (size: string): void => {
         setSelectedSize(size);
     };
 
     const handleAddToWishlist = () => { 
-        navigate("/inner/wishlist")
+        router.push("/wishlist")
 
     };
 
     const handleAddToCart = () => { 
-        navigate("/inner/cart")
+        router.push("/cart")
     };
     return (
         <section className="product-details">

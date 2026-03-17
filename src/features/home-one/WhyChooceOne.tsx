@@ -1,11 +1,13 @@
+"use client";
 import React from 'react';
 
-import whyChooseOneImg1 from '../../assets/images/resources/why-choose-one-img-1.jpg';
-import whyChooseOneImg2 from '../../assets/images/resources/why-choose-one-img-2.jpg';
-import TextAnimation from '../../components/elements/TextAnimation';
-import FadeInAdvanced, { type AnimationVariant } from '../../components/elements/FadeInAdvanced';
-import useFixproContext from '../../components/context/useFixproContext';
-import { Link } from 'react-router';
+import whyChooseOneImg1 from '@/assets/images/resources/why-choose-one-img-1.jpg';
+import whyChooseOneImg2 from '@/assets/images/resources/why-choose-one-img-2.jpg';
+import TextAnimation from '@/components/elements/TextAnimation';
+import FadeInAdvanced, { type AnimationVariant } from '@/components/elements/FadeInAdvanced';
+import useFixproContext from '@/components/context/useFixproContext';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface ChooseItem {
     id: number;
@@ -55,7 +57,7 @@ const rightColumnItems: ChooseItem[] = [
 ];
 
 const WhyChooseOne: React.FC = () => {
-      const { handleVideoClick } = useFixproContext();
+    const { handleVideoClick } = useFixproContext();
     return (
         <section className="why-choose-one">
             <div className="container">
@@ -81,34 +83,34 @@ const WhyChooseOne: React.FC = () => {
                                 <div className="row">
                                     <div className="col-xl-6 col-lg-6 col-md-6">
                                         <ul className="why-choose-one__list list-unstyled">
-                                            {leftColumnItems.map((item) => ( 
-                                                    <FadeInAdvanced key={item.id} className='liItem'
-                                                     variant={item.animationType} 
-                                                     delay={item?.animationDelay}
-                                                     >
-                                                        <div className="icon">
-                                                            <span className={item.iconClass}></span>
-                                                        </div>
-                                                        <div className="content">
-                                                            <h3>{item.title}</h3>
-                                                            <p>{item.text}</p>
-                                                        </div>
-                                                    </FadeInAdvanced> 
+                                            {leftColumnItems.map((item) => (
+                                                <FadeInAdvanced key={item.id} className='liItem'
+                                                    variant={item.animationType}
+                                                    delay={item?.animationDelay}
+                                                >
+                                                    <div className="icon">
+                                                        <span className={item.iconClass}></span>
+                                                    </div>
+                                                    <div className="content">
+                                                        <h3>{item.title}</h3>
+                                                        <p>{item.text}</p>
+                                                    </div>
+                                                </FadeInAdvanced>
                                             ))}
                                         </ul>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6">
                                         <ul className="why-choose-one__list list-unstyled">
-                                            {rightColumnItems.map((item) => ( 
-                                                    <FadeInAdvanced key={item.id} className='liItem' variant={item.animationType} duration={item?.animationDelay}>
-                                                        <div className="icon">
-                                                            <span className={item.iconClass}></span>
-                                                        </div>
-                                                        <div className="content">
-                                                            <h3>{item.title}</h3>
-                                                            <p>{item.text}</p>
-                                                        </div>
-                                                    </FadeInAdvanced> 
+                                            {rightColumnItems.map((item) => (
+                                                <FadeInAdvanced key={item.id} className='liItem' variant={item.animationType} duration={item?.animationDelay}>
+                                                    <div className="icon">
+                                                        <span className={item.iconClass}></span>
+                                                    </div>
+                                                    <div className="content">
+                                                        <h3>{item.title}</h3>
+                                                        <p>{item.text}</p>
+                                                    </div>
+                                                </FadeInAdvanced>
                                             ))}
                                         </ul>
                                     </div>
@@ -118,20 +120,18 @@ const WhyChooseOne: React.FC = () => {
                     </div>
                     <div className="col-xl-6">
                         <FadeInAdvanced className="why-choose-one__right " variant="slideInRight" delay={100}>
-
                             <div className="why-choose-one__img-box">
                                 <div className="why-choose-one__img">
-                                    <img src={whyChooseOneImg1} alt="" />
+                                    <Image src={whyChooseOneImg1} style={{ width: "auto", height: "auto" }} alt="" />
                                 </div>
                                 <div className="why-choose-one__img-2">
-                                    <img src={whyChooseOneImg2} alt="" />
+                                    <Image src={whyChooseOneImg2} style={{ width: "auto", height: "auto" }} alt="" />
                                 </div>
                                 <div className="why-choose-one__shape-1"></div>
                                 <div className="why-choose-one__video-link">
-                                    <Link
-                                    to={"#"}
-                                    onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")} 
-                                        className="video-popup" 
+                                    <Link href={"#"}
+                                        onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")}
+                                        className="video-popup"
                                     >
                                         <div className="why-choose-one__video-icon">
                                             <span className="icon-play"></span>

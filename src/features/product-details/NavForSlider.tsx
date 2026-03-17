@@ -1,8 +1,10 @@
+"use client";
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs, Autoplay } from "swiper/modules";
-import type { Swiper as SwiperType } from 'swiper';
-import { productsList } from "../../contents/products/productData";
+import type { Swiper as SwiperType } from 'swiper'; 
+import { productsList } from "@/contents/products/productData";
+import Image from "next/image";
 
 const NavForSlider: React.FC = () => {
     const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
@@ -26,7 +28,7 @@ const NavForSlider: React.FC = () => {
                     {productsList.map((product) => (
                         <SwiperSlide key={product.id}>
                             <div className="product-details__img">
-                                <img src={product?.image} alt="Image" />
+                                <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="Image" />
                             </div>
                         </SwiperSlide>
                     ))}
@@ -62,7 +64,7 @@ const NavForSlider: React.FC = () => {
                         {productsList.map((product) => (
                             <SwiperSlide key={product.id}>
                                 <div className="product-details__thumb-img">
-                                    <img src={product?.image} alt="Image" />
+                                    <Image src={product?.image} width={123} height={127} alt="Image" />
                                 </div>
                             </SwiperSlide>
                         ))}

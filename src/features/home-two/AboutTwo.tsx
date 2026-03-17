@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import aboutTwoShape1 from '../../assets/images/shapes/about-two-shape-1.png';
-import aboutTwoShape2 from '../../assets/images/shapes/about-two-shape-2.png';
-import aboutTwoImg1 from '../../assets/images/resources/about-two-img-1.jpg';
-import aboutTwoImg2 from '../../assets/images/resources/about-two-img-2.jpg';
-import TextAnimation from '../../components/elements/TextAnimation';
-import FadeInAdvanced from '../../components/elements/FadeInAdvanced';
-import CounterUp from '../../components/elements/CounterUp';
-import useFixproContext from '../../components/context/useFixproContext';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import aboutTwoShape1 from '@/assets/images/shapes/about-two-shape-1.png';
+import aboutTwoShape2 from '@/assets/images/shapes/about-two-shape-2.png';
+import aboutTwoImg1 from '@/assets/images/resources/about-two-img-1.jpg';
+import aboutTwoImg2 from '@/assets/images/resources/about-two-img-2.jpg';
+import TextAnimation from '@/components/elements/TextAnimation';
+import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
+import CounterUp from '@/components/elements/CounterUp';
+import useFixproContext from '@/components/context/useFixproContext';
+import SectionWrapper from '@/components/elements/SectionWrapper';
 
 interface PointItem {
     id: number;

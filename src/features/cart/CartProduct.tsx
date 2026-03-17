@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router';
-import QuantityOfProduct from '../product-details/QuantityOfProduct';
+"use client";
 
-interface CartPro {
-    id: number;
-    name: string;
-    image: string;
-    link: string
-    price: number
-}
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import QuantityOfProduct from '../product-details/QuantityOfProduct';
+import { CartPro } from './CartMain';
+
 interface Props {
     product: CartPro;
     removeProduct: (id: number) => void;
@@ -21,10 +18,10 @@ const CartProduct: React.FC<Props> = ({ product, removeProduct }) => {
             <td>
                 <div className="product-box">
                     <div className="img-box">
-                        <img src={product.image} alt={product.name} />
+                        <Image src={product.image} alt={product.name} />
                     </div>
                     <h3>
-                        <Link to={product.link}>{product.name}</Link>
+                        <Link href={product.link}>{product.name}</Link>
                     </h3>
                 </div>
             </td>

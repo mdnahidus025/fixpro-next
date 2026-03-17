@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import { Link } from 'react-router';
 
-import faqOneImg1 from '../../assets/images/resources/faq-one-img-1.jpg';
-import CounterUp from '../../components/elements/CounterUp';
-import TextAnimation from '../../components/elements/TextAnimation';
+import faqOneImg1 from '@/assets/images/resources/faq-one-img-1.jpg';
+import CounterUp from '@/components/elements/CounterUp';
+import TextAnimation from '@/components/elements/TextAnimation';
 
 interface FaqItem {
     id: number;

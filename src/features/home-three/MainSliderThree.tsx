@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
-import shape1 from "../../assets/images/shapes/main-slider-three-shape-1.png"
-import shape2 from "../../assets/images/shapes/main-slider-three-shape-2.png"
+import shape1 from "@/assets/images/shapes/main-slider-three-shape-1.png"
+import shape2 from "@/assets/images/shapes/main-slider-three-shape-2.png"
 import { Link } from 'react-router';
-import useFixproContext from '../../components/context/useFixproContext';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import useFixproContext from '@/components/context/useFixproContext';
+import SectionWrapper from '@/components/elements/SectionWrapper';
 const MainSliderThree: React.FC = () => {
     const { handleVideoClick } = useFixproContext();
     const [activeIndex, setActiveIndex] = useState(0);

@@ -1,24 +1,27 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router';
+"use client";
+
+import React, { useState } from 'react'; 
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 
-import projectOneShape1 from '../../assets/images/shapes/project-one-shape-1.png';
-import project1 from '../../assets/images/project/project-1-1.jpg';
-import project2 from '../../assets/images/project/project-1-2.jpg';
-import project3 from '../../assets/images/project/project-1-3.jpg';
-import project4 from '../../assets/images/project/project-1-4.jpg';
-import project5 from '../../assets/images/project/project-1-5.jpg';
-import project6 from '../../assets/images/project/project-1-6.jpg';
-import project7 from '../../assets/images/project/project-1-7.jpg';
+import projectOneShape1 from '@/assets/images/shapes/project-one-shape-1.png';
+import project1 from '@/assets/images/project/project-1-1.jpg';
+import project2 from '@/assets/images/project/project-1-2.jpg';
+import project3 from '@/assets/images/project/project-1-3.jpg';
+import project4 from '@/assets/images/project/project-1-4.jpg';
+import project5 from '@/assets/images/project/project-1-5.jpg';
+import project6 from '@/assets/images/project/project-1-6.jpg';
+import project7 from '@/assets/images/project/project-1-7.jpg';
 import Lightbox from 'yet-another-react-lightbox';
-import TextAnimation from '../../components/elements/TextAnimation';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import TextAnimation from '@/components/elements/TextAnimation';
+import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image  from 'next/image';
+import Link from 'next/link';
 
 interface ProjectItem {
     id: number;
-    image: string;
+    image: string ;
     subTitle: string;
     title: string;
     to: string;
@@ -27,49 +30,49 @@ interface ProjectItem {
 const projectItems: ProjectItem[] = [
     {
         id: 1,
-        image: project1,
+        image: project1.src,
         subTitle: 'Express Electric',
         title: 'Charging issues',
         to: '/project-details',
     },
     {
         id: 2,
-        image: project2,
+        image: project2.src,
         subTitle: 'Computer Repair',
         title: 'Hardware Update',
         to: '/project-details',
     },
     {
         id: 3,
-        image: project3,
+        image: project3.src,
         subTitle: 'Express Electric',
         title: 'Charging issues',
         to: '/project-details',
     },
     {
         id: 4,
-        image: project4,
+        image: project4.src,
         subTitle: 'Recovery',
         title: 'Hardware & Software',
         to: '/project-details',
     },
     {
         id: 5,
-        image: project5,
+        image: project5.src,
         subTitle: 'Mac Repair',
         title: 'Apple Iphone Repair',
         to: '/project-details',
     },
     {
         id: 6,
-        image: project6,
+        image: project6.src,
         subTitle: 'Camera Repair',
         title: 'Microphone Faults',
         to: '/project-details',
     },
     {
         id: 7,
-        image: project7,
+        image: project7.src,
         subTitle: 'Express Electric',
         title: 'Battery Replacement',
         to: '/project-details',
@@ -83,7 +86,7 @@ const ProjectOne: React.FC = () => {
     return (
         <SectionWrapper id='projects' className="project-one">
             <div className="project-one__shape-1">
-                <img src={projectOneShape1} alt="Image" />
+                <Image src={projectOneShape1} style={{width:"auto", height:"auto"}} alt="Image" />
             </div>
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style1">
@@ -111,14 +114,14 @@ const ProjectOne: React.FC = () => {
                         }}
                     >
                         {projectItems.map((project, idx) => (
-                            <SwiperSlide>
-                                <div className="item" key={project.id}>
+                            <SwiperSlide key={project.id}>
+                                <div className="item" >
                                     <div className="project-one__single">
                                         <div className="project-one__img-box">
                                             <div className="project-one__img">
-                                                <img src={project.image} alt="Image" />
+                                                <Image src={project.image} width={378} height={419} alt="Image" />
                                                 <div className="project-one__arrow">
-                                                    <Link to="#" onClick={() => { setIndex(idx); setOpenLightBox(true) }} className="img-popup">
+                                                    <Link href="#" onClick={() => { setIndex(idx); setOpenLightBox(true) }} className="img-popup">
                                                         <span className="icon-arrow-right"></span>
                                                     </Link>
                                                 </div>
@@ -126,7 +129,7 @@ const ProjectOne: React.FC = () => {
                                             <div className="project-one__content">
                                                 <p className="project-one__sub-title">{project.subTitle}</p>
                                                 <h3 className="project-one__title">
-                                                    <Link to={project.to}>{project.title}</Link>
+                                                    <Link href={project.to}>{project.title}</Link>
                                                 </h3>
                                             </div>
                                         </div>

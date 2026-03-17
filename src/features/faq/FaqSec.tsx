@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router';
+"use client";
+
+import React, { useState } from 'react'; 
 import { motion } from "framer-motion";
+import Link from 'next/link';
 interface FaqItem {
     id: number;
     question: string;
@@ -88,7 +90,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ item, isOpen, onToggle })
                         className="inner"
                     >
                         <p>{item.answer}</p>
-                        <Link to="/faq" className="faq-read-more">
+                        <Link href="/faq" className="faq-read-more">
                             Read more
                         </Link>
                     </motion.div>

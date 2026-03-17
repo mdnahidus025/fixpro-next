@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router";
 
-import teamDetailsImg1 from "../../assets/images/team/team-details-img-1.jpg";
-import Progresbar from "../../components/elements/Progressbar";
+import teamDetailsImg1 from "@/assets/images/team/team-details-img-1.jpg";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
+import Progressbar from "@/components/elements/Progressbar";
 
 interface SocialLink {
   href: string;
@@ -30,7 +31,7 @@ interface SkillItem {
 interface TeamMemberDetails {
   name: string;
   subTitle: string;
-  image: string;
+  image: string | StaticImageData;
   imageAlt: string;
   bio: string;
   socialLinks: SocialLink[];
@@ -112,7 +113,7 @@ const DetailsSecOne: React.FC = () => {
             <div className="col-xl-5 col-lg-5">
               <div className="team-details__top-left">
                 <div className="team-details__img-1">
-                  <img src={image} alt={imageAlt} />
+                  <Image src={image} style={{ width: "auto", height: "auto" }} alt={imageAlt} />
                 </div>
               </div>
             </div>
@@ -123,7 +124,7 @@ const DetailsSecOne: React.FC = () => {
                   <span className="team-details__client-sub-title">{subTitle}</span>
                   <div className="team-details__social">
                     {socialLinks.map((social) => (
-                      <Link to={social.href} key={social.label} aria-label={social.label}>
+                      <Link href={social.href} key={social.label} aria-label={social.label}>
                         <i className={social.iconClass}></i>
                       </Link>
                     ))}
@@ -192,9 +193,8 @@ const DetailsSecOne: React.FC = () => {
               <div className="team-details__bottom-right">
                 <h3 className="team-details__progress-title-1">Skills</h3>
                 <ul className="team-details__progress-list list-unstyled">
-                  {skills.map((skill) => (
-                    
-                    <Progresbar title={skill.title} value={skill.percent} height="10px"/>
+                  {skills.map((skill, i) => (
+                    <Progressbar key={i} title={skill.title} value={skill.percent} height="10px" />
                   ))}
                 </ul>
               </div>

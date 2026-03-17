@@ -1,9 +1,9 @@
 import React from 'react';
 
-import processOneBg from '../../assets/images/backgrounds/process-one-bg.jpg';
-import JarallaxSection from '../../components/elements/JarallaxSection';
-import FadeInAdvanced, { type AnimationVariant } from '../../components/elements/FadeInAdvanced';
-import TextAnimation from '../../components/elements/TextAnimation';
+import processOneBg from '@/assets/images/backgrounds/process-one-bg.jpg';
+import JarallaxSection from '@/components/elements/JarallaxSection';
+import FadeInAdvanced, { type AnimationVariant } from '@/components/elements/FadeInAdvanced';
+import TextAnimation from '@/components/elements/TextAnimation';
 
 interface ProcessItem {
     id: number;

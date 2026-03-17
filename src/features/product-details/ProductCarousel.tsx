@@ -1,8 +1,11 @@
+"use client";
+
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Link } from 'react-router';
-import { Autoplay } from 'swiper/modules'; 
-import { productsList } from '../../contents/products/productData';
+import { Autoplay } from 'swiper/modules';  
+import { productsList } from '@/contents/products/productData';
+import Link from 'next/link';
+import Image from 'next/image';
 const ProductCarousel: React.FC = () => {
     return (
         <section className="related-products">
@@ -39,8 +42,8 @@ const ProductCarousel: React.FC = () => {
                                     <SwiperSlide key={product.id}>
                                         <div className="single-product-style1 instyle--2">
                                             <div className="single-product-style1__img">
-                                                <img src={product?.image} alt="Image" />
-                                                <img src={product?.image} alt="Image" />
+                                                <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="Image" />
+                                                <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="Image" />
                                                 {
                                                     product?.isNew || product?.discouunt
                                                         ?
@@ -87,7 +90,7 @@ const ProductCarousel: React.FC = () => {
                                             <div className="single-product-style1__content">
                                                 <div className="single-product-style1__content-left">
                                                     <h4>
-                                                        <Link to="/inner/product-details">
+                                                        <Link href="/product-details">
                                                             {product?.title}
                                                         </Link>
                                                     </h4>

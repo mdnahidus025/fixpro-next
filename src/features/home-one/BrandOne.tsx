@@ -1,11 +1,13 @@
+"use client";
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import brand1 from "../../assets/images/brand/brand-1-1.png"; 
-import { Link } from 'react-router';
+import brand1 from "@/assets/images/brand/brand-1-1.png";  
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 type BrandItem = {
     id: number;
-    image: string;
+    image: string | StaticImageData;
     link: string;
 };
 const brandData: BrandItem[] = [
@@ -87,8 +89,8 @@ const BrandOne: React.FC = () => {
                                 <div className="item" >
                                     <div className="brand-one__single">
                                         <div className="brand-one__img">
-                                            <Link to={brand.link}>
-                                                <img src={brand.image} alt={`brand-${brand.id}`} />
+                                            <Link href={brand.link}>
+                                                <Image src={brand.image} style={{width:"auto", height:"auto"}} alt={`brand-${brand.id}`} />
                                             </Link>
                                         </div>
                                     </div>

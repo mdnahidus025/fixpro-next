@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
-import FadeInAdvanced from '../../components/elements/FadeInAdvanced';
-import useFixproContext from '../../components/context/useFixproContext';
-import Progresbar from '../../components/elements/Progressbar';
-import TextAnimation from '../../components/elements/TextAnimation';
+import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
+import useFixproContext from '@/components/context/useFixproContext';
+import Progresbar from '@/components/elements/Progressbar';
+import TextAnimation from '@/components/elements/TextAnimation';
 
 
 interface ProgressItem {

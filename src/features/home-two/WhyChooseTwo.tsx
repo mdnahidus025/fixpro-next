@@ -1,13 +1,13 @@
 import React from 'react';
 
-import whyChooseTwoShape2 from '../../assets/images/shapes/why-choose-two-shape-2.png';
-import whyChooseTwoShape3 from '../../assets/images/shapes/why-choose-two-shape-3.png';
-import whyChooseTwoImg1 from '../../assets/images/resources/why-choose-two-img-1.jpg';
-import FadeInAdvanced from '../../components/elements/FadeInAdvanced';
+import whyChooseTwoShape2 from '@/assets/images/shapes/why-choose-two-shape-2.png';
+import whyChooseTwoShape3 from '@/assets/images/shapes/why-choose-two-shape-3.png';
+import whyChooseTwoImg1 from '@/assets/images/resources/why-choose-two-img-1.jpg';
+import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
 import { Link } from 'react-router';
-import TextAnimation from '../../components/elements/TextAnimation';
-import useFixproContext from '../../components/context/useFixproContext';
-import Progresbar from '../../components/elements/Progressbar';
+import TextAnimation from '@/components/elements/TextAnimation';
+import useFixproContext from '@/components/context/useFixproContext';
+import Progresbar from '@/components/elements/Progressbar';
 
 interface PointItem {
     id: number;

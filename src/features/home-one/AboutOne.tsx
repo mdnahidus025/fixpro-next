@@ -1,14 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router';
+"use client";
 
-import aboutOneImg1 from '../../assets/images/resources/about-one-img-1.jpg';
-import aboutOneImg2 from '../../assets/images/resources/about-one-img-2.jpg';
-import aboutOneShape2 from '../../assets/images/shapes/about-one-shape-2.png';
-import FadeInAdvanced from '../../components/elements/FadeInAdvanced';
-import CounterUp from '../../components/elements/CounterUp';
-import TextAnimation from '../../components/elements/TextAnimation';
-import useFixproContext from '../../components/context/useFixproContext';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import React from 'react';
+import aboutOneImg1 from '@/assets/images/resources/about-one-img-1.jpg';
+import aboutOneImg2 from '@/assets/images/resources/about-one-img-2.jpg';
+import aboutOneShape2 from '@/assets/images/shapes/about-one-shape-2.png';
+
+import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
+import SectionWrapper from '@/components/elements/SectionWrapper';
+import useFixproContext from '@/components/context/useFixproContext';
+import CounterUp from '@/components/elements/CounterUp';
+import TextAnimation from '@/components/elements/TextAnimation';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface PointItem {
     id: number;
@@ -61,13 +64,13 @@ const AboutOne: React.FC<SecProp> = ({ secClass = "" }) => {
                         >
                             <div className="about-one__img-box">
                                 <div className="about-one__img">
-                                    <img src={aboutOneImg1} alt="" />
+                                    <Image src={aboutOneImg1} alt="" style={{width:"auto", height:"auto"}}/>
                                 </div>
                                 <div className="about-one__img-2">
-                                    <img src={aboutOneImg2} alt="" />
+                                    <Image src={aboutOneImg2} alt="" style={{width:"auto", height:"auto"}}/>
                                 </div>
                                 <div className="about-one__shape-2 float-bob-y">
-                                    <img src={aboutOneShape2} alt="" />
+                                    <Image src={aboutOneShape2} alt="" style={{width:"auto", height:"auto"}}/>
                                 </div>
                                 <div className="about-one__experience-box">
                                     <div className="about-one__count-box">
@@ -126,7 +129,7 @@ const AboutOne: React.FC<SecProp> = ({ secClass = "" }) => {
                             </ul>
                             <div className="about-one__btn-and-video">
                                 <div className="about-one__btn-box">
-                                    <Link to="/about" className="thm-btn">
+                                    <Link href="/about" className="thm-btn">
                                         Discover More<span className="icon-arrow-right"></span>
                                     </Link>
                                 </div>

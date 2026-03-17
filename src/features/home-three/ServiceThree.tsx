@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import servicesThreeShape1 from '../../assets/images/shapes/services-three-shape-1.png';
-import servicesThreeShape2 from '../../assets/images/shapes/services-three-shape-2.png';
-import TextAnimation from '../../components/elements/TextAnimation';
-import type { AnimationVariant } from '../../components/elements/FadeInAdvanced';
-import FadeInAdvanced from '../../components/elements/FadeInAdvanced';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import servicesThreeShape1 from '@/assets/images/shapes/services-three-shape-1.png';
+import servicesThreeShape2 from '@/assets/images/shapes/services-three-shape-2.png';
+import TextAnimation from '@/components/elements/TextAnimation';
+import type { AnimationVariant } from '@/components/elements/FadeInAdvanced';
+import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
+import SectionWrapper from '@/components/elements/SectionWrapper';
 
 interface ServiceItem {
     id: number;

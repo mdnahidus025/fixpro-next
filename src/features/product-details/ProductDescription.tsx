@@ -1,7 +1,10 @@
+"use client";
+
 import React, { useState, type FormEvent } from 'react';
 import type { ReactElement } from 'react';
-import reviewImg from "../../assets/images/shop/review-1-1.jpg"
-import reviewImg2 from "../../assets/images/shop/review-1-2.jpg"
+import reviewImg from "@/assets/images/shop/review-1-1.jpg"
+import reviewImg2 from "@/assets/images/shop/review-1-2.jpg"
+import Image, { StaticImageData } from 'next/image';
 
 // Define types
 interface ReviewFormData {
@@ -15,7 +18,7 @@ interface Review {
     name: string;
     date: string;
     rating: number;
-    image: string;
+    image: string | StaticImageData;
     comment: string;
 }
 
@@ -137,8 +140,8 @@ const ProductDescription: React.FC = () => {
                                         <p className="product-details__additional-information-text-1">
                                             Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci phaedrum. There are many variations of
                                             passages of Lorem Ipsum available, but the majority have alteration in some
-                                            injected or words which don't look even slightly believable. If you are
-                                            going to use a passage of Lorem Ipsum, you need to be sure there isn't
+                                            injected or words which {`don't`} look even slightly believable. If you are
+                                            going to use a passage of Lorem Ipsum, you need to be sure there {`isn't`}
                                             anything embarrang hidden in the middle of text.
                                         </p>
                                         <p className="product-details__additional-information-text-2">
@@ -168,7 +171,7 @@ const ProductDescription: React.FC = () => {
                                                     <div className="comment">
                                                         <div className="author-thumb">
                                                             <figure className="thumb">
-                                                                <img src={review.image} alt={review.name} />
+                                                                <Image src={review.image} width={165} height={165} alt={review.name} />
                                                             </figure>
                                                         </div>
 

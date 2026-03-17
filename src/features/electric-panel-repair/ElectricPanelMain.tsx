@@ -1,24 +1,17 @@
 import React from 'react';
-import serviceDetailsImg1 from '../../assets/images/services/service-details-img-6.jpg';
-import serviceDetailsImgBox1 from '../../assets/images/services/service-details-img-box-img-1.jpg';
-import serviceDetailsImgBox2 from '../../assets/images/services/service-details-img-box-img-2.jpg';
+import serviceDetailsImg1 from '@/assets/images/services/service-details-img-6.jpg';
+import serviceDetailsImgBox1 from '@/assets/images/services/service-details-img-box-img-1.jpg';
+import serviceDetailsImgBox2 from '@/assets/images/services/service-details-img-box-img-2.jpg';
 import ServiceDetailsSidebar from '../maintenance/ServiceDetailsSidebar';
 import ServiceDetailsFaq from '../maintenance/ServiceDetailsFaq';
+import Image  from 'next/image';
+import { ImgBoxItem } from '../installing-ceiling-fan/InstallingCilingFanMain';
 
 interface PointsListItem {
     id: number;
     text: string;
 }
-
-interface ImgBoxItem {
-    id: number;
-    image: string;
-    imageAlt: string;
-    iconClass: string;
-    title: string;
-    text: string;
-}
-
+ 
 const pointsListData: PointsListItem[] = [
     {
         id: 1,
@@ -67,7 +60,7 @@ const ElectricPanelMain: React.FC = () => {
                         <div className="service-details__left">
 
                             <div className="service-details__img">
-                                <img src={serviceDetailsImg1} alt="Electric Panel Repair" />
+                                <Image src={serviceDetailsImg1} style={{width:"auto", height:"auto"}} alt="Electric Panel Repair" />
                             </div>
 
                             <h3 className="service-details__title-1">Electric Panel Repair</h3>
@@ -102,7 +95,7 @@ const ElectricPanelMain: React.FC = () => {
                                         <div key={item.id} className="col-xl-6">
                                             <div className="service-details__img-box-single">
                                                 <div className="service-details__img-box-img">
-                                                    <img src={item.image} alt={item.imageAlt} />
+                                                    <Image src={item.image} style={{width:"auto", height:"auto"}} alt={item.imageAlt} />
                                                 </div>
                                                 <div className="service-details__img-box-content">
                                                     <div className="service-details__img-box-content-icon-and-title">

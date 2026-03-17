@@ -1,6 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router';  
-import type { ProductItem } from '../../contents/products/productData';
+import { ProductItem } from '@/contents/products/productData';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react'; 
 
 type ProductProps = {
     product: ProductItem
@@ -12,8 +13,8 @@ const ProductListView: React.FC<ProductProps> = ({ product }) => {
                 <div className="row">
                     <div className="col-xl-6 col-lg-6 col-md-6">
                         <div className="single-product-style2__img">
-                            <img src={product?.image} alt="" />
-                            <img src={product?.image} alt="" />
+                            <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="" />
+                            <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="" />
                             {
                                 product?.isNew || product?.discouunt
                                     ?
@@ -47,7 +48,7 @@ const ProductListView: React.FC<ProductProps> = ({ product }) => {
                             </div>
                             <div className="single-product-style2__text">
                                 <h4>
-                                    <Link to="/inner/product-details">
+                                    <Link href="/product-details">
                                         {product?.title}
                                     </Link>
                                 </h4>

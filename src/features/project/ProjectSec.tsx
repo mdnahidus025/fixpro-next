@@ -1,15 +1,17 @@
+"use client";
 import React, { useState } from "react";
-import { Link } from "react-router";
 
-import project1 from "../../assets/images/project/project-1-1.jpg";
-import project2 from "../../assets/images/project/project-1-2.jpg";
-import project3 from "../../assets/images/project/project-1-3.jpg";
-import project4 from "../../assets/images/project/project-1-4.jpg";
-import project5 from "../../assets/images/project/project-1-5.jpg";
-import project6 from "../../assets/images/project/project-1-6.jpg";
-import project7 from "../../assets/images/project/project-1-7.jpg";
-import FadeInAdvanced from "../../components/elements/FadeInAdvanced";
+import project1 from "@/assets/images/project/project-1-1.jpg";
+import project2 from "@/assets/images/project/project-1-2.jpg";
+import project3 from "@/assets/images/project/project-1-3.jpg";
+import project4 from "@/assets/images/project/project-1-4.jpg";
+import project5 from "@/assets/images/project/project-1-5.jpg";
+import project6 from "@/assets/images/project/project-1-6.jpg";
+import project7 from "@/assets/images/project/project-1-7.jpg"; 
 import Lightbox from "yet-another-react-lightbox";
+import FadeInAdvanced from "@/components/elements/FadeInAdvanced";
+import Image from "next/image";
+import Link from "next/link";
 
 interface Project {
     id: number;
@@ -23,7 +25,7 @@ interface Project {
 const projects: Project[] = [
     {
         id: 1,
-        image: project1,
+        image: project1.src,
         subTitle: "Express Electric",
         title: "Charging Issues",
         animationDirection: "fadeInLeft",
@@ -31,7 +33,7 @@ const projects: Project[] = [
     },
     {
         id: 2,
-        image: project2,
+        image: project2.src,
         subTitle: "Computer Repair",
         title: "Hardware Update",
         animationDirection: "fadeInLeft",
@@ -39,7 +41,7 @@ const projects: Project[] = [
     },
     {
         id: 3,
-        image: project3,
+        image: project3.src,
         subTitle: "Express Electric",
         title: "Charging Issues",
         animationDirection: "fadeInRight",
@@ -47,7 +49,7 @@ const projects: Project[] = [
     },
     {
         id: 4,
-        image: project4,
+        image: project4.src,
         subTitle: "Recovery",
         title: "Hardware & Software",
         animationDirection: "fadeInRight",
@@ -55,7 +57,7 @@ const projects: Project[] = [
     },
     {
         id: 5,
-        image: project5,
+        image: project5.src,
         subTitle: "Mac Repair",
         title: "Apple iPhone Repair",
         animationDirection: "fadeInLeft",
@@ -63,7 +65,7 @@ const projects: Project[] = [
     },
     {
         id: 6,
-        image: project6,
+        image: project6.src,
         subTitle: "Camera Repair",
         title: "Microphone Faults",
         animationDirection: "fadeInLeft",
@@ -71,7 +73,7 @@ const projects: Project[] = [
     },
     {
         id: 7,
-        image: project7,
+        image: project7.src,
         subTitle: "Express Electric",
         title: "Battery Replacement",
         animationDirection: "fadeInRight",
@@ -79,7 +81,7 @@ const projects: Project[] = [
     },
     {
         id: 8,
-        image: project2,
+        image: project2.src,
         subTitle: "Computer Repair",
         title: "Hardware Update",
         animationDirection: "fadeInRight",
@@ -105,12 +107,9 @@ const ProjectSec: React.FC = () => {
                             <div className="project-one__single">
                                 <div className="project-one__img-box">
                                     <div className="project-one__img">
-                                        <img
-                                            src={project.image}
-                                            alt={`${project.subTitle} - ${project.title}`}
-                                        />
+                                        <Image src={project.image} style={{ width: "auto", height: "auto" }} alt={`${project.subTitle} - ${project.title}`} />
                                         <div className="project-one__arrow" onClick={() => { setIndex(idx); setOpenLightBox(true) }} >
-                                            <Link to={"#"} className="img-popup" aria-label={`View full image of ${project.title}`} >
+                                            <Link href={"#"} className="img-popup" aria-label={`View full image of ${project.title}`} >
                                                 <span className="icon-arrow-right"></span>
                                             </Link>
                                         </div>
@@ -118,7 +117,7 @@ const ProjectSec: React.FC = () => {
                                     <div className="project-one__content">
                                         <p className="project-one__sub-title">{project.subTitle}</p>
                                         <h3 className="project-one__title">
-                                            <Link to="/project-details">{project.title}</Link>
+                                            <Link href="/project-details">{project.title}</Link>
                                         </h3>
                                     </div>
                                 </div>

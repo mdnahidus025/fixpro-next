@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import blog3Img1 from '../../assets/images/blog/blog-3-1.jpg';
-import blog3Img2 from '../../assets/images/blog/blog-3-2.jpg';
-import blog3Img3 from '../../assets/images/blog/blog-3-3.jpg';
-import TextAnimation from '../../components/elements/TextAnimation';
-import type { AnimationVariant } from '../../components/elements/FadeInAdvanced';
-import FadeInAdvanced from '../../components/elements/FadeInAdvanced';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import blog3Img1 from '@/assets/images/blog/blog-3-1.jpg';
+import blog3Img2 from '@/assets/images/blog/blog-3-2.jpg';
+import blog3Img3 from '@/assets/images/blog/blog-3-3.jpg';
+import TextAnimation from '@/components/elements/TextAnimation';
+import type { AnimationVariant } from '@/components/elements/FadeInAdvanced';
+import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
+import SectionWrapper from '@/components/elements/SectionWrapper';
 
 interface BlogItem {
     id: number;

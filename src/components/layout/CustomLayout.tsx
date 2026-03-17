@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import useFixproContext from '../context/useFixproContext';
 import CustomCursor from '../elements/CustomCursor';

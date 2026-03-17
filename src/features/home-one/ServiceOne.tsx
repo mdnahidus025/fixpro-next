@@ -1,12 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router';
+"use client";
+import React from 'react'; 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 
-import servicesOneShape1 from '../../assets/images/shapes/services-one-shape-1.png';
-import servicesOneShape2 from '../../assets/images/shapes/services-one-shape-2.png';
-import TextAnimation from '../../components/elements/TextAnimation';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import servicesOneShape1 from '@/assets/images/shapes/services-one-shape-1.png';
+import servicesOneShape2 from '@/assets/images/shapes/services-one-shape-2.png';
+import TextAnimation from '@/components/elements/TextAnimation';
+import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface ServiceItem {
     id: number;
@@ -61,10 +63,10 @@ const ServiceOne: React.FC = () => {
                 <div className="services-one__bg"></div>
             </div>
             <div className="services-one__shape-1 float-bob-x">
-                <img src={servicesOneShape1} alt="" />
+                <Image src={servicesOneShape1} style={{width:"auto", height:"auto"}} alt="" />
             </div>
             <div className="services-one__shape-2 float-bob-y">
-                <img src={servicesOneShape2} alt="" />
+                <Image src={servicesOneShape2} style={{width:"auto", height:"auto"}} alt="" />
             </div>
             <div className="container">
                 <div className="row">
@@ -109,14 +111,14 @@ const ServiceOne: React.FC = () => {
 
 
                                     {serviceItems.map((service) => (
-                                        <SwiperSlide>
-                                            <div className="item" key={service.id}>
+                                        <SwiperSlide key={service.id}>
+                                            <div className="item" >
                                                 <div className="services-one__single">
                                                     <div className="services-one__icon">
                                                         <span className={service.iconClass}></span>
                                                     </div>
                                                     <h3 className="services-one__title">
-                                                        <Link to={service.to}>
+                                                        <Link href={service.to}>
                                                             {service.title.split('\n').map((line, i, arr) => (
                                                                 <React.Fragment key={i}>
                                                                     {line}
@@ -126,7 +128,7 @@ const ServiceOne: React.FC = () => {
                                                         </Link>
                                                     </h3>
                                                     <p className="services-one__single-text">{service.text}</p>
-                                                    <Link to={service.to} className="services-one__read-more">
+                                                    <Link href={service.to} className="services-one__read-more">
                                                         Learn More<span className="icon-arrow-right"></span>
                                                     </Link>
                                                 </div>

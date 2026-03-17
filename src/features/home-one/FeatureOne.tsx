@@ -1,8 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React from 'react'; 
 
-import featureOneShape1 from '../../assets/images/shapes/feature-one-shape-1.png';
-import FadeInAdvanced, { type AnimationVariant } from '../../components/elements/FadeInAdvanced';
+import featureOneShape1 from '@/assets/images/shapes/feature-one-shape-1.png';
+import FadeInAdvanced, { type AnimationVariant } from '@/components/elements/FadeInAdvanced';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface FeatureItem {
     id: number;
@@ -59,14 +60,14 @@ const FeatureOne: React.FC = () => {
                                 <div className="feature-one__single">
                                     <div className="feature-one__single-inner">
                                         <div className="feature-one__shape-1">
-                                            <img src={featureOneShape1} alt="" />
+                                            <Image src={featureOneShape1} width={230} height={230} alt="" />
                                         </div>
                                         <div className="feature-one__icon-and-title">
                                             <div className="feature-one__icon">
                                                 <span className={item.iconClass}></span>
                                             </div>
                                             <h3 className="feature-one__title">
-                                                <Link to={item.to}>
+                                                <Link href={item.to}>
                                                     {item.title.split('\n').map((line, i) => (
                                                         <React.Fragment key={i}>
                                                             {line}
@@ -78,7 +79,7 @@ const FeatureOne: React.FC = () => {
                                         </div>
                                         <p className="feature-one__text">{item.text}</p>
                                         <div className="feature-one__read-more">
-                                            <Link to={item.to}>
+                                            <Link href={item.to}>
                                                 read more<span className="icon-arrow-right"></span>
                                             </Link>
                                         </div>

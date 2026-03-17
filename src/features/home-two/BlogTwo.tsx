@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
  
-import FadeInAdvanced from '../../components/elements/FadeInAdvanced';
-import TextAnimation from '../../components/elements/TextAnimation';
-import { blogTwoPosts } from '../../contents/blog/blogData';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
+import TextAnimation from '@/components/elements/TextAnimation';
+import { blogTwoPosts } from '@/contents/blog/blogData';
+import SectionWrapper from '@/components/elements/SectionWrapper';
 
 const BlogTwo: React.FC = () => {
     return (

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import aboutThreeImg1 from '../../assets/images/resources/about-three-img-1.jpg';
-import aboutThreeImg2 from '../../assets/images/resources/about-three-img-2.jpg';
-import aboutThreeShape1 from '../../assets/images/shapes/about-three-shape-1.png';
-import aboutThreeClientImg1 from '../../assets/images/resources/about-three-client-img-1.jpg';
-import useFixproContext from '../../components/context/useFixproContext';
-import FadeInAdvanced from '../../components/elements/FadeInAdvanced';
-import TextAnimation from '../../components/elements/TextAnimation';
-import CounterUp from '../../components/elements/CounterUp';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import aboutThreeImg1 from '@/assets/images/resources/about-three-img-1.jpg';
+import aboutThreeImg2 from '@/assets/images/resources/about-three-img-2.jpg';
+import aboutThreeShape1 from '@/assets/images/shapes/about-three-shape-1.png';
+import aboutThreeClientImg1 from '@/assets/images/resources/about-three-client-img-1.jpg';
+import useFixproContext from '@/components/context/useFixproContext';
+import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
+import TextAnimation from '@/components/elements/TextAnimation';
+import CounterUp from '@/components/elements/CounterUp';
+import SectionWrapper from '@/components/elements/SectionWrapper';
 
 interface ChecklistItem {
     id: number;

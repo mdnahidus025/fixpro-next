@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router";
-
-import testimonialImg1 from "../../assets/images/testimonial/testimonial-1-1.jpg";
-import testimonialImg2 from "../../assets/images/testimonial/testimonial-1-2.jpg";
-import testimonialImg3 from "../../assets/images/testimonial/testimonial-1-3.jpg";
+import testimonialImg1 from "@/assets/images/testimonial/testimonial-1-1.jpg";
+import testimonialImg2 from "@/assets/images/testimonial/testimonial-1-2.jpg";
+import testimonialImg3 from "@/assets/images/testimonial/testimonial-1-3.jpg";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -11,7 +11,7 @@ interface Testimonial {
     id: number;
     name: string;
     subTitle: string;
-    image: string;
+    image: string | StaticImageData;
     rating: number;
     text: string;
 }
@@ -87,15 +87,16 @@ const TestimonialsSec: React.FC = () => {
                                     <div className="testimonial-one__client-info">
                                         <div className="testimonial-one__client-img-box">
                                             <div className="testimonial-one__client-img">
-                                                <img
+                                                <Image
                                                     src={testimonial.image}
                                                     alt={`${testimonial.name} - ${testimonial.subTitle}`}
+                                                    style={{width:"auto", height:"auto"}}
                                                 />
                                             </div>
                                         </div>
                                         <div className="testimonial-one__client-content">
                                             <h3 className="testimonial-one__client-name">
-                                                <Link to="/testimonials">{testimonial.name}</Link>
+                                                <Link href="/testimonials">{testimonial.name}</Link>
                                             </h3>
                                             <p className="testimonial-one__client-sub-title">
                                                 {testimonial.subTitle}

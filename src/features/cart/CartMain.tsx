@@ -1,48 +1,51 @@
-import React, { useEffect, useState } from 'react';
-import productImg1 from "../../assets/images/shop/cart-page-img-1.jpg"
-import productImg2 from "../../assets/images/shop/cart-page-img-2.jpg"
-import productImg3 from "../../assets/images/shop/cart-page-img-3.jpg"
-import productImg4 from "../../assets/images/shop/cart-page-img-4.jpg"
-import { Link } from 'react-router';
-import CartProduct from './CartProduct';
-import CustomSelect from '../../components/elements/CustomSelect';
-import useFixproContext from '../../components/context/useFixproContext';
+"use client";
 
-interface CartPro {
+import React, { useEffect, useState } from 'react';
+import productImg1 from "@/assets/images/shop/cart-page-img-1.jpg"
+import productImg2 from "@/assets/images/shop/cart-page-img-2.jpg"
+import productImg3 from "@/assets/images/shop/cart-page-img-3.jpg"
+import productImg4 from "@/assets/images/shop/cart-page-img-4.jpg"
+import { StaticImageData } from 'next/image';
+import useFixproContext from '@/components/context/useFixproContext';
+import CartProduct from './CartProduct';
+import CustomSelect from '@/components/elements/CustomSelect';
+import Link from 'next/link';
+
+export interface CartPro {
     id: number;
     name: string;
-    image: string;
+    image: string | StaticImageData;
     link: string
     price: number
 }
-const cartProducts: CartPro[] = [
+ const cartProducts: CartPro[] = [
     {
         id: 1,
         name: "Gree Air Conditioner",
         image: productImg1,
         price: 10.99,
-        link: "/inner/product-details"
+        link: "/product-details"
     },
     {
         id: 2,
         name: "Pliers | Cutting, Gripping",
         image: productImg2,
         price: 10.99,
-        link: "/inner/product-details"
+        link: "/product-details"
     },
     {
         id: 3,
         name: "Gear and wrench",
         image: productImg3,
         price: 10.99,
-        link: "/inner/product-details"
+        link: "/product-details"
     },
     {
         id: 4,
         name: "Nut Driver",
         image: productImg4,
         price: 10.99,
-        link: "/inner/product-details"
+        link: "/product-details"
     }
 ];
 
@@ -53,7 +56,6 @@ const CartMain: React.FC = () => {
     const removeProduct = (id: number) => {
         setCartProduct((pre) => pre.filter((p) => p.id !== id));
         setCartCount(cartProduct.length - 1);
-
     }
     useEffect(() => {
         setCartCount(cartProducts.length || 0)
@@ -162,12 +164,12 @@ const CartMain: React.FC = () => {
                                     </ul>
                                     <div className="cart-page__buttons">
                                         <div className="cart-page__buttons-1">
-                                            <Link to="/inner/checkout" className="thm-btn" >
+                                            <Link href="/checkout" className="thm-btn" >
                                                 Update <span><i className="icon-arrow-right"></i></span>
                                             </Link>
                                         </div>
                                         <div className="cart-page__buttons-2">
-                                            <Link to="/inner/checkout" className="thm-btn">
+                                            <Link href="/checkout" className="thm-btn">
                                                 Checkout <span><i className="icon-arrow-right"></i></span>
                                             </Link>
                                         </div>

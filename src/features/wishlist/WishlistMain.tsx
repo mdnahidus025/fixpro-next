@@ -1,13 +1,15 @@
+"use client";
 import React, { useState } from "react";
-import { Link } from "react-router";
 
 /* =======================
    Image Imports (TOP)
 ======================= */
-import wishlistImg1 from "../../assets/images/shop/wishlist-page-img-1.jpg";
-import wishlistImg2 from "../../assets/images/shop/wishlist-page-img-2.jpg";
-import wishlistImg3 from "../../assets/images/shop/wishlist-page-img-3.jpg";
-import wishlistImg4 from "../../assets/images/shop/wishlist-page-img-4.jpg";
+import wishlistImg1 from "@/assets/images/shop/wishlist-page-img-1.jpg";
+import wishlistImg2 from "@/assets/images/shop/wishlist-page-img-2.jpg";
+import wishlistImg3 from "@/assets/images/shop/wishlist-page-img-3.jpg";
+import wishlistImg4 from "@/assets/images/shop/wishlist-page-img-4.jpg";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 /* =======================
    Types
@@ -17,7 +19,7 @@ interface WishlistItem {
     name: string;
     price: number;
     stock: string;
-    image: string;
+    image: string | StaticImageData;
 }
 
 /* =======================
@@ -88,11 +90,11 @@ const WishlistMain: React.FC = () => {
                                             </div>
 
                                             <div className="img-box">
-                                                <img src={item.image} alt={item.name} />
+                                                <Image src={item.image} style={{width:"auto", height:"auto"}} alt={item.name} />
                                             </div>
 
                                             <h3>
-                                                <Link to="/inner/product-details">
+                                                <Link href="/product-details">
                                                     {item.name}
                                                 </Link>
                                             </h3>
@@ -107,7 +109,7 @@ const WishlistMain: React.FC = () => {
                                         <div className="product-select">
                                             <Link
                                                 className="thm-btn wishlist-page__btn"
-                                                to="/inner/product-details"
+                                                href="/product-details"
                                             >
                                                 Select Product
                                                 <span><i className="icon-arrow-right"></i></span>

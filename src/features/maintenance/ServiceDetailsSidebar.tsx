@@ -1,5 +1,8 @@
+"use client";
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
-import { Link, useLocation } from 'react-router';
 
 interface ServiceLinkItem {
     id: number;
@@ -58,7 +61,7 @@ const downloadItems: DownloadItem[] = [
 ];
 
 const ServiceDetailsSidebar: React.FC = () => {
-    const currentPath = useLocation().pathname;
+    const currentPath = usePathname();
     return (
         <div className="col-xl-4 col-lg-5">
             <div className="service-details__sidebar">
@@ -69,7 +72,7 @@ const ServiceDetailsSidebar: React.FC = () => {
                     <ul className="service-details__services-list list-unstyled">
                         {serviceLinks.map((service) => (
                             <li key={service.id} className={service.path === currentPath ? 'active' : ''}>
-                                <Link to={service.path}>
+                                <Link href={service.path}>
                                     {service.label}
                                     <span className="icon-arrow-right"></span>
                                 </Link>
@@ -95,7 +98,7 @@ const ServiceDetailsSidebar: React.FC = () => {
                         ))}
                     </ul>
                     <div className="service-details__get-started-btn-box">
-                        <Link to="/contact" className="service-details__get-started-btn thm-btn">
+                        <Link href="/contact" className="service-details__get-started-btn thm-btn">
                             Get In Touch
                         </Link>
                     </div>

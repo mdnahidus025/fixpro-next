@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import pricingTwoShape2 from '../../assets/images/shapes/pricing-two-shape-2.png';
-import pricingTwoImg1 from '../../assets/images/resources/pricing-two-img-1.png';
-import type { AnimationVariant } from '../../components/elements/FadeInAdvanced';
-import TextAnimation from '../../components/elements/TextAnimation';
-import FadeInAdvanced from '../../components/elements/FadeInAdvanced';
+import pricingTwoShape2 from '@/assets/images/shapes/pricing-two-shape-2.png';
+import pricingTwoImg1 from '@/assets/images/resources/pricing-two-img-1.png';
+import type { AnimationVariant } from '@/components/elements/FadeInAdvanced';
+import TextAnimation from '@/components/elements/TextAnimation';
+import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
 
 interface PricingFeature {
     id: number;

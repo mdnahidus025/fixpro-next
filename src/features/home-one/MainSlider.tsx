@@ -1,12 +1,15 @@
+"use client";
+
 import React, { useState } from 'react';
-import shape from "../../assets/images/shapes/main-slider-shape-1.png"
-import shapeTwo from "../../assets/images/shapes/main-slider-shape-2.png"
+import shape from "@/assets/images/shapes/main-slider-shape-1.png"
+import shapeTwo from "@/assets/images/shapes/main-slider-shape-2.png"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Autoplay, Navigation } from 'swiper/modules';
-import useFixproContext from '../../components/context/useFixproContext';
-import { Link } from 'react-router';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import useFixproContext from '@/components/context/useFixproContext'; 
+import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image from 'next/image';
+import Link from 'next/link';
 const MainSlider: React.FC = () => {
     const { handleVideoClick } = useFixproContext();
     const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
@@ -32,10 +35,10 @@ const MainSlider: React.FC = () => {
                         <div className={`item ${activeIndex === 0 ? 'active' : ''}`}>
                             <div className="main-slider__shape-bg" ></div>
                             <div className="main-slider__shape-1 float-bob-x">
-                                <img src={shape} alt="shapeImage" />
+                                <Image src={shape} style={{width:"auto", height:"auto"}} alt="shapeImage" />
                             </div>
                             <div className="main-slider__shape-2 float-bob-y">
-                                <img src={shapeTwo} alt="shapeImage" />
+                                <Image src={shapeTwo} style={{width:"auto", height:"auto"}} alt="shapeImage" />
                             </div>
                             <div className="main-slider__bg-box">
                                 <div className="main-slider__bg one" >
@@ -59,7 +62,7 @@ const MainSlider: React.FC = () => {
                                                 className="icon-arrow-right"></span></a>
                                         </div>
                                         <div className="main-slider__video-link">
-                                            <Link to="#" onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")} className="video-popup">
+                                            <Link href="#" onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")} className="video-popup">
                                                 <div className="main-slider__video-icon">
                                                     <span className="fa fa-play"></span>
                                                     <i className="ripple"></i>
@@ -75,10 +78,10 @@ const MainSlider: React.FC = () => {
                         <div className={`item ${activeIndex === 1 ? 'active' : ''}`}>
                             <div className="main-slider__shape-bg" ></div>
                             <div className="main-slider__shape-1 float-bob-x">
-                                <img src={shape} alt="shapeImage" />
+                                <Image src={shape} style={{width:"auto", height:"auto"}} alt="shapeImage" />
                             </div>
                             <div className="main-slider__shape-2 float-bob-y">
-                                <img src={shapeTwo} alt="shapeImage" />
+                                <Image src={shapeTwo} style={{width:"auto", height:"auto"}} alt="shapeImage" />
                             </div>
                             <div className="main-slider__bg-box">
                                 <div className="main-slider__bg two" >
@@ -100,7 +103,7 @@ const MainSlider: React.FC = () => {
                                                 className="icon-arrow-right"></span></a>
                                         </div>
                                         <div className="main-slider__video-link">
-                                            <Link to="#" onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")} className="video-popup">
+                                            <Link href="#" onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")} className="video-popup">
                                                 <div className="main-slider__video-icon">
                                                     <span className="fa fa-play"></span>
                                                     <i className="ripple"></i>
@@ -117,10 +120,10 @@ const MainSlider: React.FC = () => {
                         <div className={`item ${activeIndex === 2 ? 'active' : ''}`}>
                             <div className="main-slider__shape-bg" ></div>
                             <div className="main-slider__shape-1 float-bob-x">
-                                <img src={shape} alt="shapeImage" />
+                                <Image src={shape} style={{width:"auto", height:"auto"}} alt="shapeImage" />
                             </div>
                             <div className="main-slider__shape-2 float-bob-y">
-                                <img src={shapeTwo} alt="shapeImage" />
+                                <Image src={shapeTwo} style={{width:"auto", height:"auto"}} alt="shapeImage" />
                             </div>
                             <div className="main-slider__bg-box">
                                 <div className="main-slider__bg three" >
@@ -143,7 +146,7 @@ const MainSlider: React.FC = () => {
                                                 className="icon-arrow-right"></span></a>
                                         </div>
                                         <div className="main-slider__video-link">
-                                            <Link to="#" onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")} className="video-popup">
+                                            <Link href="#" onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")} className="video-popup">
                                                 <div className="main-slider__video-icon">
                                                     <span className="fa fa-play"></span>
                                                     <i className="ripple"></i>

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router';
+import React, { useState } from 'react'; 
 import BlogSidebar from './BlogSidebar';
-import { blogStandardData } from '../../contents/blog/blogData';
+import { blogStandardData } from '@/contents/blog/blogData'; 
+import Image from 'next/image';
+import Link from 'next/link';
 
  
 const BlogStandartMain: React.FC = () => {
@@ -25,7 +26,7 @@ const BlogStandartMain: React.FC = () => {
                             {currentProducts.map((blog) => (
                                 <div className="blog-list__single" key={blog.id}>
                                     <div className="blog-list__img">
-                                        <img src={blog.image} alt={blog.title} />
+                                        <Image src={blog.image} alt={blog.title} style={{width:"auto", height:"auto"}}/>
                                         <div className="blog-list__date">
                                             <p>{blog.day}<br />{blog.month}</p>
                                         </div>
@@ -37,18 +38,18 @@ const BlogStandartMain: React.FC = () => {
                                             </div>
                                             <ul className="blog-list__meta list-unstyled">
                                                 <li>
-                                                    <Link to="#"><span className="fas fa-comments"></span>Comments ({blog.commentsCount})</Link>
+                                                    <Link href="#"><span className="fas fa-comments"></span>Comments ({blog.commentsCount})</Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="#"><span className="fas fa-clock"></span>{blog.readTime}</Link>
+                                                    <Link href="#"><span className="fas fa-clock"></span>{blog.readTime}</Link>
                                                 </li>
                                             </ul>
                                         </div>
                                         <h3 className="blog-list__title">
-                                            <Link to={blog.link}>{blog.title}</Link>
+                                            <Link href={blog.link}>{blog.title}</Link>
                                         </h3>
                                         <p className="blog-list__text">{blog.text}</p>
-                                        <Link to={blog.link} className="blog-list__read-more">
+                                        <Link href={blog.link} className="blog-list__read-more">
                                             Learn More<span className="icon-arrow-right"></span>
                                         </Link>
                                     </div>

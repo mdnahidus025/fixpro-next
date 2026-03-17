@@ -3,14 +3,14 @@ import { Link } from 'react-router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 
-import projectImg1 from '../../assets/images/project/project-2-1.jpg';
-import projectImg2 from '../../assets/images/project/project-2-2.jpg';
-import projectImg3 from '../../assets/images/project/project-2-3.jpg';
-import projectImg4 from '../../assets/images/project/project-2-4.jpg';
-import projectImg5 from '../../assets/images/project/project-2-5.jpg';
-import TextAnimation from '../../components/elements/TextAnimation';
+import projectImg1 from '@/assets/images/project/project-2-1.jpg';
+import projectImg2 from '@/assets/images/project/project-2-2.jpg';
+import projectImg3 from '@/assets/images/project/project-2-3.jpg';
+import projectImg4 from '@/assets/images/project/project-2-4.jpg';
+import projectImg5 from '@/assets/images/project/project-2-5.jpg';
+import TextAnimation from '@/components/elements/TextAnimation';
 import Lightbox from 'yet-another-react-lightbox';
-import SectionWrapper from '../../components/elements/SectionWrapper';
+import SectionWrapper from '@/components/elements/SectionWrapper';
 
 interface ProjectItem {
     id: number;
