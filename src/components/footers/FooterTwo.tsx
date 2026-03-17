@@ -1,5 +1,6 @@
-import React from 'react'; 
+"use client";
 
+import React from 'react';
 import footerPostImg1 from '@/assets/images/blog/footer-widget-post-img-1.jpg';
 import footerPostImg2 from '@/assets/images/blog/footer-widget-post-img-2.jpg';
 
@@ -20,7 +21,7 @@ interface NavLink {
     label: string;
     to: string;
 }
- 
+
 interface SocialLink {
     id: number;
     icon: string;
@@ -108,7 +109,7 @@ const FooterTwo = () => {
                         <FadeInAdvanced className="col-xl-3" variant='fadeInUp' delay={100}>
                             <div className="footer-widget__column footer-widget__about">
                                 <div className="footer-widget__logo">
-                                    <Link href="/"><Image src={footerLogo} width={138} height={40}  alt="Fixpro Logo" /></Link>
+                                    <Link href="/"><Image src={footerLogo} width={138} height={40} alt="Fixpro Logo" /></Link>
                                 </div>
                                 <p className="footer-widget__about-text">
                                     Secure other greater pleasures, or else he endures pains to avoid worse pains selection

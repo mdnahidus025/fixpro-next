@@ -1,10 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router';
 
+import React from 'react'; 
 import featureTwoShape1 from '@/assets/images/shapes/feature-two-shape-1.png';
 import featureTwoSingleShape1 from '@/assets/images/shapes/feature-two-single-shape-1.png';
 import FadeInAdvanced, { type AnimationVariant } from '@/components/elements/FadeInAdvanced';
 import TextAnimation from '@/components/elements/TextAnimation';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface FeatureItem {
     id: number;
@@ -59,7 +60,7 @@ const FeatureTwo: React.FC = () => {
     return (
         <section className="feature-two">
             <div className="feature-two__shape-1 rotate-me">
-                <img src={featureTwoShape1} alt="" className="float-bob-y" />
+                <Image src={featureTwoShape1} style={{ width: "auto", height: "auto" }} alt="" className="float-bob-y" />
             </div>
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style1">
@@ -86,7 +87,7 @@ const FeatureTwo: React.FC = () => {
                                         style={{ backgroundImage: `url(${featureTwoSingleShape1})` }}
                                     ></div>
                                     <h3 className="feature-two__title">
-                                        <Link to={item.to}>{item.title}</Link>
+                                        <Link href={item.to}>{item.title}</Link>
                                     </h3>
                                     <p className="feature-two__text">{item.text}</p>
                                 </div>

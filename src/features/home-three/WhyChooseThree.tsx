@@ -1,9 +1,11 @@
+"use client";
+
 import React from 'react';
-import { Link } from 'react-router';
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
 import useFixproContext from '@/components/context/useFixproContext';
 import Progresbar from '@/components/elements/Progressbar';
 import TextAnimation from '@/components/elements/TextAnimation';
+import Link from 'next/link';
 
 
 interface ProgressItem {
@@ -64,7 +66,7 @@ const WhyChooseThree: React.FC = () => {
                 <div className="why-choose-three__video-link">
                     <Link
                         onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")}
-                        to={"#"}
+                        href={"#"}
                         className="video-popup"
                     >
                         <div className="why-choose-three__video-icon">
@@ -97,15 +99,15 @@ const WhyChooseThree: React.FC = () => {
 
                             <div className="why-choose-three__progress-box">
                                 <ul className="why-choose-three__progress-list list-unstyled">
-                                    {progressItems.map((item) => (
-                                        <Progresbar title={item?.title} value={item.percent} />
+                                    {progressItems.map((item, i) => (
+                                        <Progresbar key={i} title={item?.title} value={item.percent} />
                                     ))}
                                 </ul>
                             </div>
 
                             <div className="why-choose-three__btn-box">
                                 {buttonItems.map((btn) => (
-                                    <Link key={btn.id} to={btn.path} className={btn.className}>
+                                    <Link key={btn.id} href={btn.path} className={btn.className}>
                                         {btn.label}
                                     </Link>
                                 ))}

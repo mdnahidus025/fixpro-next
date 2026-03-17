@@ -1,15 +1,18 @@
+"use client";
+
 import React from 'react';
-import { Link } from 'react-router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import testimonial3Img1 from '@/assets/images/testimonial/testimonial-3-1.jpg';
 import testimonial3Img2 from '@/assets/images/testimonial/testimonial-3-2.jpg';
 import testimonial3Img3 from '@/assets/images/testimonial/testimonial-3-3.jpg';
 import TextAnimation from '@/components/elements/TextAnimation';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 interface TestimonialItem {
     id: number;
-    image: string;
+    image: string | StaticImageData;
     name: string;
     role: string;
     rating: number;
@@ -93,13 +96,13 @@ const TestimonialsThree: React.FC = () => {
                                     <div className="testimonial-three__single">
                                         <div className="testimonial-three__img-box">
                                             <div className="testimonial-three__img">
-                                                <img src={item.image} alt={item.name} />
+                                                <Image src={item.image} width={150} height={150} alt={item.name} />
                                             </div>
                                         </div>
                                         <div className="testimonial-three__content">
                                             <div className="testimonial-three__name-box">
                                                 <h3>
-                                                    <Link to={item.path}>{item.name}</Link>
+                                                    <Link href={item.path}>{item.name}</Link>
                                                 </h3>
                                                 <p>{item.role}</p>
                                             </div>

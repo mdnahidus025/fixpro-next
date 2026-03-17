@@ -1,6 +1,5 @@
+"use client";
 import React from 'react';
-import { Link } from 'react-router';
-
 import aboutTwoShape1 from '@/assets/images/shapes/about-two-shape-1.png';
 import aboutTwoShape2 from '@/assets/images/shapes/about-two-shape-2.png';
 import aboutTwoImg1 from '@/assets/images/resources/about-two-img-1.jpg';
@@ -10,6 +9,8 @@ import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
 import CounterUp from '@/components/elements/CounterUp';
 import useFixproContext from '@/components/context/useFixproContext';
 import SectionWrapper from '@/components/elements/SectionWrapper';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface PointItem {
     id: number;
@@ -28,10 +29,10 @@ const AboutTwo: React.FC = () => {
     return (
         <SectionWrapper id='about' className="about-two">
             <div className="about-two__shape-1 rotate-me">
-                <img src={aboutTwoShape1} alt="" />
+                <Image src={aboutTwoShape1} style={{ width: "auto", height: "auto" }} alt="" />
             </div>
             <div className="about-two__shape-2 float-bob-y">
-                <img src={aboutTwoShape2} alt="" />
+                <Image src={aboutTwoShape2} style={{ width: "auto", height: "auto" }} alt="" />
             </div>
             <div className="container">
                 <div className="row">
@@ -64,7 +65,7 @@ const AboutTwo: React.FC = () => {
                                 devices, including Ac, laptops, desktops, smartphones, tablets, and more..
                             </p>
                             <div className="about-two__btn-box">
-                                <Link to="/about" className="thm-btn">
+                                <Link href="/about" className="thm-btn">
                                     More About Us<span className="icon-arrow-right"></span>
                                 </Link>
                             </div>
@@ -78,10 +79,10 @@ const AboutTwo: React.FC = () => {
                         >
                             <div className="about-two__img-box">
                                 <div className="about-two__img">
-                                    <img src={aboutTwoImg1} alt="" />
+                                    <Image src={aboutTwoImg1} style={{ width: "auto", height: "auto" }} alt="" />
                                 </div>
                                 <div className="about-two__img-2">
-                                    <img src={aboutTwoImg2} alt="" />
+                                    <Image src={aboutTwoImg2} style={{ width: "auto", height: "auto" }} alt="" />
                                 </div>
                                 <div className="about-two__experience-box">
                                     <div className="about-two__count-box">
@@ -92,8 +93,7 @@ const AboutTwo: React.FC = () => {
                                 </div>
                                 <div className="about-two__circle-bdr rotate-me"></div>
                                 <div className="about-two__video-link">
-                                    <Link
-                                        to="#"
+                                    <Link href="#"
                                         className="video-popup"
                                         onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")}
                                     >

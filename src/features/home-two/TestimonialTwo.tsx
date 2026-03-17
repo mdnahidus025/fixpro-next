@@ -1,5 +1,6 @@
+"use client";
+
 import React, { useState } from 'react';
-import { Link } from 'react-router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Autoplay, Navigation } from 'swiper/modules';
@@ -7,10 +8,12 @@ import testimonialImg1 from '@/assets/images/testimonial/testimonial-2-1.jpg';
 import testimonialImg2 from '@/assets/images/testimonial/testimonial-2-2.jpg';
 import testimonialImg3 from '@/assets/images/testimonial/testimonial-2-3.jpg';
 import TextAnimation from '@/components/elements/TextAnimation';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 interface TestimonialItem {
     id: number;
-    image: string;
+    image: string | StaticImageData;
     name: string;
     subTitle: string;
     text: string;
@@ -93,7 +96,7 @@ const TestimonialTwo: React.FC = () => {
                                             <div className="item" >
                                                 <div className="testimonial-two__single">
                                                     <div className="testimonial-two__img">
-                                                        <img src={item.image} alt="" />
+                                                        <Image src={item.image} width={90} height={90} alt="" />
                                                         <div className="testimonial-two__rating">
                                                             {Array.from({ length: item.starCount }).map((_, index) => (
                                                                 <span key={index} className="fas fa-star"></span>
@@ -103,7 +106,7 @@ const TestimonialTwo: React.FC = () => {
                                                     <div className="testimonial-two__client-info">
                                                         <div className="testimonial-two__client-content">
                                                             <h4 className="testimonial-two__client-name">
-                                                                <Link to={item.to}>{item.name}</Link>
+                                                                <Link href={item.to}>{item.name}</Link>
                                                             </h4>
                                                             <p className="testimonial-two__client-sub-title">{item.subTitle}</p>
                                                         </div>
@@ -134,7 +137,7 @@ const TestimonialTwo: React.FC = () => {
                                     >
                                         <span className="icon-arrow-right"></span>
                                     </button>
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>

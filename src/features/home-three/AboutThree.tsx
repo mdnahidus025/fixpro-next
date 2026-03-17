@@ -1,6 +1,5 @@
+"use client";
 import React from 'react';
-import { Link } from 'react-router';
-
 import aboutThreeImg1 from '@/assets/images/resources/about-three-img-1.jpg';
 import aboutThreeImg2 from '@/assets/images/resources/about-three-img-2.jpg';
 import aboutThreeShape1 from '@/assets/images/shapes/about-three-shape-1.png';
@@ -10,6 +9,8 @@ import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
 import TextAnimation from '@/components/elements/TextAnimation';
 import CounterUp from '@/components/elements/CounterUp';
 import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface ChecklistItem {
     id: number;
@@ -58,7 +59,7 @@ const featurePoints: FeaturePoint[] = [
 const clientInfo: ClientInfo = {
     name: 'Mark Hander',
     role: 'Founder & CEO',
-    image: aboutThreeClientImg1,
+    image: aboutThreeClientImg1.src,
 };
 
 const AboutThree: React.FC = () => {
@@ -71,14 +72,14 @@ const AboutThree: React.FC = () => {
                         <FadeInAdvanced
                             className="about-three__left"
                             delay={100}
-                            variant='slideInLeft' 
+                            variant='slideInLeft'
                         >
                             <div className="about-three__img-box">
                                 <div className="about-three__img">
-                                    <img src={aboutThreeImg1} alt="About us main" />
+                                    <Image src={aboutThreeImg1} alt="About us main" />
                                     <div className="about-three__video-link">
                                         <Link
-                                            to="#"
+                                            href={"#"}
                                             onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")}
                                             className="video-popup"
                                         >
@@ -90,15 +91,15 @@ const AboutThree: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className="about-three__img-2">
-                                    <img src={aboutThreeImg2} alt="About us secondary" />
+                                    <Image src={aboutThreeImg2} alt="About us secondary" />
                                 </div>
                                 <div className="about-three__shape-1">
-                                    <img src={aboutThreeShape1} alt="" />
+                                    <Image src={aboutThreeShape1} alt="" />
                                 </div>
                                 <div className="about-three__shape-2"></div>
                                 <div className="about-three__experience-box">
                                     <div className="about-three__count-box">
-                                        <h3 className="odometer" ><CounterUp ending={25}/></h3>
+                                        <h3 className="odometer" ><CounterUp ending={25} /></h3>
                                         <span>+</span>
                                     </div>
                                     <p className="about-three__experience-text">
@@ -150,13 +151,13 @@ const AboutThree: React.FC = () => {
 
                             <div className="about-three__btn-and-client-box">
                                 <div className="about-three__btn-box">
-                                    <Link to="/about" className="thm-btn">
+                                    <Link href="/about" className="thm-btn">
                                         About More<span className="icon-arrow-right"></span>
                                     </Link>
                                 </div>
                                 <div className="about-three__client-box">
                                     <div className="about-three__client-img">
-                                        <img src={clientInfo.image} alt={clientInfo.name} />
+                                        <Image src={clientInfo.image} width={70} height={70} alt={clientInfo.name} />
                                     </div>
                                     <div className="about-three__client-content">
                                         <h4>{clientInfo.name}</h4>

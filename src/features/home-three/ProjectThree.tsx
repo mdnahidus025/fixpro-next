@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router';
+"use client";
 
+import React, { useState } from 'react'; 
 import project3Img1 from '@/assets/images/project/project-3-1.jpg';
 import project3Img3 from '@/assets/images/project/project-3-3.jpg';
 import project3Img4 from '@/assets/images/project/project-3-4.jpg';
@@ -9,6 +9,8 @@ import TextAnimation from '@/components/elements/TextAnimation';
 import FadeInAdvanced, { type AnimationVariant } from '@/components/elements/FadeInAdvanced';
 import Lightbox from 'yet-another-react-lightbox';
 import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 type FilterCategory = 'office' | 'house' | 'corporate' | 'all';
 
@@ -20,7 +22,7 @@ interface FilterItem {
 interface ProjectItem {
     id: number;
     image: string;
-    popupImage: string;
+    popupImage: string | StaticImageData;
     title: string;
     location: string;
     categories: FilterCategory[];
@@ -40,7 +42,7 @@ const filterItems: FilterItem[] = [
 const projectItems: ProjectItem[] = [
     {
         id: 1,
-        image: project3Img1,
+        image: project3Img1.src,
         popupImage: project3Img1,
         title: 'Maintenance Service',
         location: 'Los Angeles, USA',
@@ -51,7 +53,7 @@ const projectItems: ProjectItem[] = [
     },
     {
         id: 2,
-        image: project3Img5,
+        image: project3Img5.src,
         popupImage: project3Img1,
         title: 'Lighting & Fixtures',
         location: 'Los Angeles, USA',
@@ -62,7 +64,7 @@ const projectItems: ProjectItem[] = [
     },
     {
         id: 3,
-        image: project3Img3,
+        image: project3Img3.src,
         popupImage: project3Img1,
         title: 'Electric Repair',
         location: 'Los Angeles, USA',
@@ -73,7 +75,7 @@ const projectItems: ProjectItem[] = [
     },
     {
         id: 4,
-        image: project3Img4,
+        image: project3Img4.src,
         popupImage: project3Img1,
         title: 'Debris Stuck',
         location: 'Los Angeles, USA',
@@ -84,7 +86,7 @@ const projectItems: ProjectItem[] = [
     },
     {
         id: 5,
-        image: project3Img5,
+        image: project3Img5.src,
         popupImage: project3Img1,
         title: 'Maintenance Service',
         location: 'Los Angeles, USA',
@@ -95,7 +97,7 @@ const projectItems: ProjectItem[] = [
     },
     {
         id: 6,
-        image: project3Img3,
+        image: project3Img3.src,
         popupImage: project3Img1,
         title: 'Maintenance Service',
         location: 'Los Angeles, USA',
@@ -161,15 +163,15 @@ const ProjectThree: React.FC = () => {
                             <div className="project-three__single">
                                 <div className="project-three__img-box">
                                     <div className="project-three__img">
-                                        <img src={project.image} alt={project.title} />
+                                        <Image src={project.image} width={410} height={278} alt={project.title} />
                                         <div className="project-three__arrow" onClick={() => { setIndex(i); setOpenLightBox((pre: boolean) => !pre) }}>
-                                            <Link className="img-popup" to={"#"}>
+                                            <Link className="img-popup" href={"#"}>
                                                 <span className="icon-plus"></span>
                                             </Link>
                                         </div>
                                         <div className="project-three__content">
                                             <h2>
-                                                <Link to={project.path}>{project.title}</Link>
+                                                <Link href={project.path}>{project.title}</Link>
                                             </h2>
                                             <p>{project.location}</p>
                                         </div>

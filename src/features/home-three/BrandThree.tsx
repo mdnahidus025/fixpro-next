@@ -1,5 +1,6 @@
-import React from 'react';
 
+"use client";
+import React from 'react';
 import brand2Img1 from '@/assets/images/brand/brand-2-1.png';
 import brand2Img2 from '@/assets/images/brand/brand-2-2.png';
 import brand2Img3 from '@/assets/images/brand/brand-2-3.png';
@@ -7,9 +8,10 @@ import brand2Img4 from '@/assets/images/brand/brand-2-4.png';
 import brand2Img5 from '@/assets/images/brand/brand-2-5.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
+import Image, { StaticImageData } from 'next/image';
 interface BrandItem {
     id: number;
-    image: string;
+    image: string | StaticImageData;
     alt: string;
 }
 
@@ -50,7 +52,7 @@ const BrandThree: React.FC = () => {
                                 <SwiperSlide key={brand.id}>
                                     <div className="brand-two__single">
                                         <div className="brand-two__img">
-                                            <img src={brand.image} alt={brand.alt} />
+                                            <Image src={brand.image} style={{ width: "auto", height: "auto" }} alt={brand.alt} />
                                         </div>
                                     </div>
                                 </SwiperSlide>

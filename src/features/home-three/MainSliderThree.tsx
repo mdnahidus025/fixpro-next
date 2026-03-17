@@ -1,11 +1,14 @@
+"use client";
+
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 import shape1 from "@/assets/images/shapes/main-slider-three-shape-1.png"
-import shape2 from "@/assets/images/shapes/main-slider-three-shape-2.png"
-import { Link } from 'react-router';
+import shape2 from "@/assets/images/shapes/main-slider-three-shape-2.png" 
 import useFixproContext from '@/components/context/useFixproContext';
 import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image from 'next/image';
+import Link from 'next/link';
 const MainSliderThree: React.FC = () => {
     const { handleVideoClick } = useFixproContext();
     const [activeIndex, setActiveIndex] = useState(0);
@@ -34,10 +37,10 @@ const MainSliderThree: React.FC = () => {
                             </div>
                             <div className="main-slider-three__overly"></div>
                             <div className="main-slider-three__shape-1">
-                                <img src={shape1} alt="image" className="float-bob-x" />
+                                <Image src={shape1} style={{ width: "auto", height: "auto" }} alt="image" className="float-bob-x" />
                             </div>
                             <div className="main-slider-three__shape-2">
-                                <img src={shape2} alt="image" className="float-bob-x" />
+                                <Image src={shape2} style={{ width: "auto", height: "auto" }} alt="image" className="float-bob-x" />
                             </div>
                             <div className="container">
                                 <div className="main-slider-three__content">
@@ -50,11 +53,11 @@ const MainSliderThree: React.FC = () => {
                                         memorized
                                         as a benchmark in what they do.</p>
                                     <div className="main-slider-three__btn-box">
-                                        <Link to="/about" className="thm-btn">Discover More <span
+                                        <Link href="/about" className="thm-btn">Discover More <span
                                             className="icon-arrow-right"></span></Link>
                                     </div>
                                     <div className="main-slider-three__video-link">
-                                        <Link to="#" onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")} className="video-popup">
+                                        <Link href="#" onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")} className="video-popup">
                                             <div className="main-slider-three__video-icon">
                                                 <span className="fa fa-play"></span>
                                                 <i className="ripple"></i>
@@ -71,10 +74,10 @@ const MainSliderThree: React.FC = () => {
                             </div>
                             <div className="main-slider-three__overly"></div>
                             <div className="main-slider-three__shape-1">
-                                <img src={shape1} alt="image" className="float-bob-x" />
+                                <Image src={shape1} style={{ width: "auto", height: "auto" }} alt="image" className="float-bob-x" />
                             </div>
                             <div className="main-slider-three__shape-2">
-                                <img src={shape2} alt="image" className="float-bob-x" />
+                                <Image src={shape2} style={{ width: "auto", height: "auto" }} alt="image" className="float-bob-x" />
                             </div>
                             <div className="container">
                                 <div className="main-slider-three__content">
@@ -87,11 +90,11 @@ const MainSliderThree: React.FC = () => {
                                         memorized
                                         as a benchmark in what they do.</p>
                                     <div className="main-slider-three__btn-box">
-                                        <Link to="/about" className="thm-btn">Discover More <span
+                                        <Link href="/about" className="thm-btn">Discover More <span
                                             className="icon-arrow-right"></span></Link>
                                     </div>
                                     <div className="main-slider-three__video-link">
-                                        <Link to="#" onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")} className="video-popup">
+                                        <Link href="#" onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")} className="video-popup">
                                             <div className="main-slider-three__video-icon">
                                                 <span className="fa fa-play"></span>
                                                 <i className="ripple"></i>
@@ -108,10 +111,10 @@ const MainSliderThree: React.FC = () => {
                             </div>
                             <div className="main-slider-three__overly"></div>
                             <div className="main-slider-three__shape-1">
-                                <img src={shape1} alt="image" className="float-bob-x" />
+                                <Image src={shape1} style={{ width: "auto", height: "auto" }} alt="image" className="float-bob-x" />
                             </div>
                             <div className="main-slider-three__shape-2">
-                                <img src={shape2} alt="image" className="float-bob-x" />
+                                <Image src={shape2} style={{ width: "auto", height: "auto" }} alt="image" className="float-bob-x" />
                             </div>
                             <div className="container">
                                 <div className="main-slider-three__content">
@@ -124,11 +127,11 @@ const MainSliderThree: React.FC = () => {
                                         memorized
                                         as a benchmark in what they do.</p>
                                     <div className="main-slider-three__btn-box">
-                                        <Link to="/about" className="thm-btn">Discover More <span
+                                        <Link href="/about" className="thm-btn">Discover More <span
                                             className="icon-arrow-right"></span></Link>
                                     </div>
                                     <div className="main-slider-three__video-link">
-                                        <Link to="#" onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")} className="video-popup">
+                                        <Link href="#" onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")} className="video-popup">
                                             <div className="main-slider-three__video-icon">
                                                 <span className="fa fa-play"></span>
                                                 <i className="ripple"></i>

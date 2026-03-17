@@ -1,5 +1,5 @@
+"use client";
 import React from 'react'; 
-
 import footerShape1 from '@/assets/images/shapes/site-footer-two-shape-1.png';
 import logo2 from '@/assets/images/resources/logo-2.png';
 import FadeInAdvanced from '../elements/FadeInAdvanced';

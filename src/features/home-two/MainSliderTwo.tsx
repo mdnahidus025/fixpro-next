@@ -1,5 +1,6 @@
+"use client";
+
 import React, { useState } from 'react';
-import { Link } from 'react-router';
 import shapeOne from "@/assets/images/shapes/main-slider-two-shape-1.png"
 import slideImg from "@/assets/images/resources/main-slider-two-img-1-1.jpg"
 import slideImgSmall from "@/assets/images/resources/main-slider-two-small-img-1-1.jpg"
@@ -15,6 +16,8 @@ import type { Swiper as SwiperType } from 'swiper';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import useFixproContext from '@/components/context/useFixproContext';
 import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const MainSliderTwo: React.FC = () => {
     const { handleVideoClick } = useFixproContext();
@@ -50,13 +53,13 @@ const MainSliderTwo: React.FC = () => {
                             </div>
                             <div className="main-slider-two__overly"></div>
                             <div className="main-slider-two__shape-1">
-                                <img src={shapeOne} alt="image" className="float-bob-x" />
+                                <Image src={shapeOne} style={{ width: "auto", height: "auto" }} alt="image" className="float-bob-x" />
                             </div>
                             <div className="main-slider-two__img">
-                                <img src={slideImg} alt="image" />
+                                <Image src={slideImg} style={{ width: "auto", height: "auto" }} alt="image" />
                             </div>
                             <div className="main-slider-two__small-img">
-                                <img src={slideImgSmall} alt="image" />
+                                <Image src={slideImgSmall} style={{ width: "auto", height: "auto" }} alt="image" />
                             </div>
                             <div className="container">
                                 <div className="main-slider-two__content">
@@ -72,11 +75,11 @@ const MainSliderTwo: React.FC = () => {
                                         corrupt quo quad molestation</p>
                                     <div className="main-slider-two__btn-box">
                                         <div className="main-slider-two__btn">
-                                            <Link to="/about" className="thm-btn">Discover More <span
+                                            <Link href="/about" className="thm-btn">Discover More <span
                                                 className="icon-arrow-right"></span></Link>
                                         </div>
                                         <div className="main-slider-two__video-link">
-                                            <Link to="#" onClick={handleVideo} className="video-popup">
+                                            <Link href="#" onClick={handleVideo} className="video-popup">
                                                 <div className="main-slider-two__video-icon">
                                                     <span className="fa fa-play"></span>
                                                     <i className="ripple"></i>
@@ -91,16 +94,16 @@ const MainSliderTwo: React.FC = () => {
                     <SwiperSlide>
                         <div className={`item ${activeIndex === 1 ? 'active' : ''}`}>
                             <div className="main-slider-two__bg two" >
-                            </div>/
+                            </div>
                             <div className="main-slider-two__overly"></div>
                             <div className="main-slider-two__shape-1">
-                                <img src={shapeOne} alt="image" className="float-bob-x" />
+                                <Image src={shapeOne} style={{ width: "auto", height: "auto" }} alt="image" className="float-bob-x" />
                             </div>
                             <div className="main-slider-two__img">
-                                <img src={slideImgTwo} alt="image" />
+                                <Image src={slideImgTwo} style={{ width: "auto", height: "auto" }} alt="image" />
                             </div>
                             <div className="main-slider-two__small-img">
-                                <img src={slideImgSmallTwo} alt="image" />
+                                <Image src={slideImgSmallTwo} style={{ width: "auto", height: "auto" }} alt="image" />
                             </div>
                             <div className="container">
                                 <div className="main-slider-two__content">
@@ -115,11 +118,11 @@ const MainSliderTwo: React.FC = () => {
                                         corrupt quo quad molestation</p>
                                     <div className="main-slider-two__btn-box">
                                         <div className="main-slider-two__btn">
-                                            <Link to="/about" className="thm-btn">Discover More <span
+                                            <Link href="/about" className="thm-btn">Discover More <span
                                                 className="icon-arrow-right"></span></Link>
                                         </div>
                                         <div className="main-slider-two__video-link">
-                                            <Link to="#" onClick={handleVideo} className="video-popup">
+                                            <Link href="#" onClick={handleVideo} className="video-popup">
                                                 <div className="main-slider-two__video-icon">
                                                     <span className="fa fa-play"></span>
                                                     <i className="ripple"></i>
@@ -137,13 +140,13 @@ const MainSliderTwo: React.FC = () => {
                             </div>
                             <div className="main-slider-two__overly"></div>
                             <div className="main-slider-two__shape-1">
-                                <img src={shapeOne} alt="image" className="float-bob-x" />
+                                <Image src={shapeOne} style={{ width: "auto", height: "auto" }} alt="image" className="float-bob-x" />
                             </div>
                             <div className="main-slider-two__img">
-                                <img src={slideImgThree} alt="image" />
+                                <Image src={slideImgThree} style={{ width: "auto", height: "auto" }} alt="image" />
                             </div>
                             <div className="main-slider-two__small-img">
-                                <img src={slideImgSmallThree} alt="image" />
+                                <Image src={slideImgSmallThree} style={{ width: "auto", height: "auto" }} alt="image" />
                             </div>
                             <div className="container">
                                 <div className="main-slider-two__content">
@@ -159,10 +162,10 @@ const MainSliderTwo: React.FC = () => {
                                         corrupt quo quad molestation</p>
                                     <div className="main-slider-two__btn-box">
                                         <div className="main-slider-two__btn">
-                                            <Link to="/about" className="thm-btn">Discover More <span className="icon-arrow-right"></span></Link>
+                                            <Link href="/about" className="thm-btn">Discover More <span className="icon-arrow-right"></span></Link>
                                         </div>
                                         <div className="main-slider-two__video-link">
-                                            <Link to="#" onClick={handleVideo} className="video-popup">
+                                            <Link href="#" onClick={handleVideo} className="video-popup">
                                                 <div className="main-slider-two__video-icon">
                                                     <span className="fa fa-play"></span>
                                                     <i className="ripple"></i>

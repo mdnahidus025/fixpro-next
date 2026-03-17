@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router';
-
+import React from 'react'; 
 import servicesThreeShape1 from '@/assets/images/shapes/services-three-shape-1.png';
 import servicesThreeShape2 from '@/assets/images/shapes/services-three-shape-2.png';
 import TextAnimation from '@/components/elements/TextAnimation';
 import type { AnimationVariant } from '@/components/elements/FadeInAdvanced';
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
 import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface ServiceItem {
     id: number;
@@ -56,10 +56,10 @@ const ServiceThree: React.FC = () => {
     return (
         <SectionWrapper id='services' className="services-three">
             <div className="services-three__shape-1">
-                <img src={servicesThreeShape1} alt="Imge" />
+                <Image src={servicesThreeShape1} style={{ width: "auto", height: "auto" }} alt="Imge" />
             </div>
             <div className="services-three__shape-2 rotate-me">
-                <img src={servicesThreeShape2} alt="image" />
+                <Image src={servicesThreeShape2} style={{ width: "auto", height: "auto" }} alt="image" />
             </div>
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style1">
@@ -84,10 +84,10 @@ const ServiceThree: React.FC = () => {
                                 </div>
                                 <p className="services-three__sub-title">{service.subTitle}</p>
                                 <h3 className="services-three__title">
-                                    <Link to={service.path}>{service.title}</Link>
+                                    <Link href={service.path}>{service.title}</Link>
                                 </h3>
                                 <p className="services-three__text">{service.text}</p>
-                                <Link to={service.path} className="services-three__learn-more">
+                                <Link href={service.path} className="services-three__learn-more">
                                     Learn More<span className="icon-arrow-right"></span>
                                 </Link>
                             </div>

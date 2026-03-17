@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router';
-
+import React from 'react'; 
 import pricingTwoShape2 from '@/assets/images/shapes/pricing-two-shape-2.png';
 import pricingTwoImg1 from '@/assets/images/resources/pricing-two-img-1.png';
 import type { AnimationVariant } from '@/components/elements/FadeInAdvanced';
 import TextAnimation from '@/components/elements/TextAnimation';
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface PricingFeature {
     id: number;
@@ -70,7 +70,7 @@ const PricingTwo: React.FC = () => {
     return (
         <section className="pricing-two">
             <div className="pricing-two__shape-2">
-                <img src={pricingTwoShape2} alt="" />
+                <Image src={pricingTwoShape2} style={{ width: "auto", height: "auto" }} alt="" />
             </div>
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style1">
@@ -111,7 +111,7 @@ const PricingTwo: React.FC = () => {
                                                 ))}
                                             </ul>
                                             <div className="pricing-two__btn-box">
-                                                <Link to={plan.to} className="thm-btn">
+                                                <Link href={plan.to} className="thm-btn">
                                                     Choose Package
                                                     <span className="icon-arrow-right"></span>
                                                 </Link>
@@ -119,7 +119,7 @@ const PricingTwo: React.FC = () => {
                                             {plan.hasPremiumExtras && (
                                                 <>
                                                     <div className="pricing-two__img-1">
-                                                        <img src={pricingTwoImg1} alt="" />
+                                                        <Image src={pricingTwoImg1} style={{ width: "auto", height: "auto" }} alt="" />
                                                     </div>
                                                     <div className="pricing-two__shape-1"></div>
                                                 </>

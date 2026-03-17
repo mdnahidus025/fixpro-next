@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
- 
 import teamImg1 from '@/assets/images/team/team-2-1.jpg';
 import teamImg2 from '@/assets/images/team/team-2-2.jpg';
 import teamImg3 from '@/assets/images/team/team-2-3.jpg';
@@ -9,6 +7,8 @@ import type { AnimationVariant } from '@/components/elements/FadeInAdvanced';
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
 import TextAnimation from '@/components/elements/TextAnimation';
 import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 interface SocialLink {
     iconClass: string;
@@ -17,7 +17,7 @@ interface SocialLink {
 
 interface TeamMember {
     id: number;
-    image: string;
+    image: string | StaticImageData;
     name: string;
     subTitle: string;
     to: string;
@@ -100,7 +100,7 @@ const TeamTwo: React.FC = () => {
                             <div className="team-two__single">
                                 <div className="team-two__img-box">
                                     <div className="team-two__img">
-                                        <img src={member.image} alt="" />
+                                        <Image src={member.image} width={300} height={250} alt="" />
                                     </div>
                                 </div>
                                 <div className="team-two__content">
@@ -112,7 +112,7 @@ const TeamTwo: React.FC = () => {
                                         ))}
                                     </div>
                                     <h3 className="team-two__title">
-                                        <Link to={member.to}>{member.name}</Link>
+                                        <Link href={member.to}>{member.name}</Link>
                                     </h3>
                                     <p className="team-two__sub-title">{member.subTitle}</p>
                                 </div>

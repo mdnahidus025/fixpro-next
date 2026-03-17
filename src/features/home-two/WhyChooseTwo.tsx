@@ -1,13 +1,15 @@
-import React from 'react';
+"use client";
 
+import React from 'react'; 
 import whyChooseTwoShape2 from '@/assets/images/shapes/why-choose-two-shape-2.png';
 import whyChooseTwoShape3 from '@/assets/images/shapes/why-choose-two-shape-3.png';
 import whyChooseTwoImg1 from '@/assets/images/resources/why-choose-two-img-1.jpg';
-import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
-import { Link } from 'react-router';
+import FadeInAdvanced from '@/components/elements/FadeInAdvanced'; 
 import TextAnimation from '@/components/elements/TextAnimation';
 import useFixproContext from '@/components/context/useFixproContext';
 import Progresbar from '@/components/elements/Progressbar';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface PointItem {
     id: number;
@@ -44,10 +46,10 @@ const WhyChooseTwo: React.FC = () => {
     return (
         <section className="why-choose-two">
             <div className="why-choose-two__shape-2 rotate-me">
-                <img src={whyChooseTwoShape2} alt="" />
+                <Image src={whyChooseTwoShape2} style={{ width: "auto", height: "auto" }} alt="" />
             </div>
             <div className="why-choose-two__shape-3 rotate-me">
-                <img src={whyChooseTwoShape3} alt="" />
+                <Image src={whyChooseTwoShape3} style={{ width: "auto", height: "auto" }} alt="" />
             </div>
             <div className="container">
                 <div className="row">
@@ -59,10 +61,10 @@ const WhyChooseTwo: React.FC = () => {
                         >
                             <div className="why-choose-two__img-box">
                                 <div className="why-choose-two__img-1">
-                                    <img src={whyChooseTwoImg1} alt="" />
+                                    <Image src={whyChooseTwoImg1} style={{ width: "auto", height: "auto" }} alt="" />
                                     <div className="why-choose-two__video-link">
                                         <Link
-                                            to="#"
+                                            href="#"
                                             className="video-popup"
                                             onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")}
                                         >

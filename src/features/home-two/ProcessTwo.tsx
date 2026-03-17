@@ -57,7 +57,7 @@ const processItems: ProcessItem[] = [
 const ProcessTwo: React.FC = () => {
     return (
         <section className="process-one">
-            <JarallaxSection imgSrc={processOneBg} className="process-one__bg jarallax" >
+            <JarallaxSection imgSrc={processOneBg.src} className="process-one__bg jarallax" >
                 <div className=""></div>
             </JarallaxSection>
             <div className="container">

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router';
+"use client";
 
+import React from 'react';
 import blog3Img1 from '@/assets/images/blog/blog-3-1.jpg';
 import blog3Img2 from '@/assets/images/blog/blog-3-2.jpg';
 import blog3Img3 from '@/assets/images/blog/blog-3-3.jpg';
@@ -8,10 +8,12 @@ import TextAnimation from '@/components/elements/TextAnimation';
 import type { AnimationVariant } from '@/components/elements/FadeInAdvanced';
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
 import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 interface BlogItem {
     id: number;
-    image: string;
+    image: string | StaticImageData;
     author: string;
     date: string;
     title: string;
@@ -77,7 +79,7 @@ const BlogThree: React.FC = () => {
                             <div className="blog-three__single">
                                 <div className="blog-three__img-box">
                                     <div className="blog-three__img">
-                                        <img src={blog.image} alt={blog.title} />
+                                        <Image src={blog.image} width={410} height={430} alt={blog.title} />
                                     </div>
                                     <div className="blog-three__content">
                                         <ul className="blog-three__meta list-unstyled">
@@ -95,10 +97,10 @@ const BlogThree: React.FC = () => {
                                             </li>
                                         </ul>
                                         <h3 className="blog-three__title">
-                                            <Link to={blog.path}>{blog.title}</Link>
+                                            <Link href={blog.path}>{blog.title}</Link>
                                         </h3>
                                         <div className="blog-three__btn-box">
-                                            <Link to={blog.path} className="thm-btn">
+                                            <Link href={blog.path} className="thm-btn">
                                                 Read More <span className="icon-arrow-right"></span>
                                             </Link>
                                         </div>

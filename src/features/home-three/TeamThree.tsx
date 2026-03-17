@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router';
-
 import team3Img1 from '@/assets/images/team/team-3-1.jpg';
 import team3Img2 from '@/assets/images/team/team-3-2.jpg';
 import team3Img3 from '@/assets/images/team/team-3-3.jpg';
 import TextAnimation from '@/components/elements/TextAnimation';
 import FadeInAdvanced, { type AnimationVariant } from '@/components/elements/FadeInAdvanced';
 import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 interface SocialLink {
     icon: string;
@@ -16,7 +16,7 @@ interface SocialLink {
 
 interface TeamMember {
     id: number;
-    image: string;
+    image: string | StaticImageData;
     name: string;
     role: string;
     path: string;
@@ -89,13 +89,13 @@ const TeamThree: React.FC = () => {
                             <div className="team-three__single">
                                 <div className="team-three__img-box">
                                     <div className="team-three__img">
-                                        <img src={member.image} alt={member.name} />
+                                        <Image src={member.image} width={350} height={390} alt={member.name} />
                                     </div>
                                 </div>
                                 <div className="team-three__content">
                                     <div className="team-three__title-box">
                                         <h3 className="team-three__title">
-                                            <Link to={member.path}>{member.name}</Link>
+                                            <Link href={member.path}>{member.name}</Link>
                                         </h3>
                                         <p className="team-three__sub-title">{member.role}</p>
                                     </div>

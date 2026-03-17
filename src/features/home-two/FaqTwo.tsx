@@ -1,10 +1,11 @@
+"use client";
 import React, { useState } from 'react';
-import { motion } from "framer-motion";
-import { Link } from 'react-router';
-
+import { motion } from "framer-motion"; 
 import faqOneImg1 from '@/assets/images/resources/faq-one-img-1.jpg';
 import CounterUp from '@/components/elements/CounterUp';
 import TextAnimation from '@/components/elements/TextAnimation';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface FaqItem {
     id: number;
@@ -54,7 +55,7 @@ const FaqTwo: React.FC = () => {
                         >
                             <div className="faq-one__img-box">
                                 <div className="faq-one__img">
-                                    <img src={faqOneImg1} alt="" />
+                                    <Image src={faqOneImg1} style={{ width: "auto", height: "auto" }} alt="" />
                                 </div>
                                 <div className="faq-one__ratting-box">
                                     <div className="faq-one__ratting">
@@ -118,7 +119,7 @@ const FaqTwo: React.FC = () => {
                 <div className="faq-one__bottom">
                     <p className="faq-one__bottom-text">Have Any Questions? Quick Answers to Common Questions.</p>
                     <div className="faq-one__bottom-btn">
-                        <Link to="/contact" className="thm-btn">
+                        <Link href="/contact" className="thm-btn">
                             here to help<span className="icon-arrow-right"></span>
                         </Link>
                     </div>

@@ -1,5 +1,6 @@
+"use client";
+
 import React from 'react';
-import { Link } from 'react-router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import servicesTwoShape1 from '@/assets/images/shapes/services-two-shape-1.png';
@@ -10,10 +11,12 @@ import servicesImg4 from '@/assets/images/services/services-1-4.jpg';
 import servicesImg5 from '@/assets/images/services/services-1-5.jpg';
 import TextAnimation from '@/components/elements/TextAnimation';
 import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 interface ServiceItem {
     id: number;
-    image: string;
+    image: string | StaticImageData;
     iconClass: string;
     title: string;
     to: string;
@@ -68,7 +71,7 @@ const ServiceTwo: React.FC = () => {
         <SectionWrapper id='services' className="services-two">
             <div className="services-two__bg-color">
                 <div className="services-two__shape-1">
-                    <img src={servicesTwoShape1} alt="" />
+                    <Image src={servicesTwoShape1} style={{ width: "auto", height: "auto" }} alt="" />
                 </div>
             </div>
             <div className="container">
@@ -96,19 +99,19 @@ const ServiceTwo: React.FC = () => {
                             768: { slidesPerView: 2, spaceBetween: 20 },
                             1200: { slidesPerView: 3, spaceBetween: 20 },
                         }}
-                    > 
+                    >
                         {serviceItems.map((service) => (
                             <SwiperSlide key={service.id}>
                                 <div className="item" >
                                     <div className="services-two__single">
                                         <div className="services-two__img-box">
                                             <div className="services-two__img">
-                                                <img src={service.image} alt="" />
+                                                <Image src={service.image} style={{ width: "auto", height: "auto" }} alt="" />
                                             </div>
                                             <div className="services-two__hover-content">
                                                 <p className="services-two__hover-text">{service.hoverText}</p>
                                                 <div className="services-two__btn-box">
-                                                    <Link to={service.to} className="thm-btn">
+                                                    <Link href={service.to} className="thm-btn">
                                                         read more
                                                     </Link>
                                                 </div>
@@ -119,7 +122,7 @@ const ServiceTwo: React.FC = () => {
                                         </div>
                                         <div className="services-two__content">
                                             <h3 className="services-two__title">
-                                                <Link to={service.to}>{service.title}</Link>
+                                                <Link href={service.to}>{service.title}</Link>
                                             </h3>
                                         </div>
                                     </div>

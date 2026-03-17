@@ -1,5 +1,5 @@
+"use client";
 import React, { useState } from 'react';
-
 import contactOneMap from '@/assets/images/shapes/contact-one-map.png';
 import contactPopupImg1 from '@/assets/images/resources/contact-one-popup-img-1.jpg';
 import contactPopupImg2 from '@/assets/images/resources/contact-one-popup-img-2.jpg';
@@ -10,11 +10,12 @@ import TextAnimation from '@/components/elements/TextAnimation';
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
 import CustomSelect from '@/components/elements/CustomSelect';
 import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image, { StaticImageData } from 'next/image';
 interface MapPoint {
     id: number;
     pointClass: string;
     markerClass: string;
-    image: string;
+    image: string | StaticImageData;
     address: string;
     street: string;
 }
@@ -139,7 +140,7 @@ const ContactTwo: React.FC<ContactTwoProp> = ({ sectionClass = "" }) => {
                         <div className="contact-one__left">
                             <div className="contact-one__map-box">
                                 <div className="contact-one__map-img">
-                                    <img src={contactOneMap} alt="" />
+                                    <Image src={contactOneMap} style={{ width: "auto", height: "auto" }} alt="" />
                                 </div>
                                 {mapPoints.map((point) => (
                                     <div key={point.id} className={point.pointClass}>
@@ -150,7 +151,7 @@ const ContactTwo: React.FC<ContactTwoProp> = ({ sectionClass = "" }) => {
                                             <div className="contact-one__popup">
                                                 <div className="contact-one__popup-inner">
                                                     <div className="contact-one__popup-img">
-                                                        <img src={point.image} alt="" />
+                                                        <Image src={point.image} style={{ width: "auto", height: "auto" }} alt="" />
                                                     </div>
                                                     <div className="contact-one__popup-content">
                                                         <p>

@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router';
- 
+import React from 'react'; 
 import FadeInAdvanced from '@/components/elements/FadeInAdvanced';
 import TextAnimation from '@/components/elements/TextAnimation';
 import { blogTwoPosts } from '@/contents/blog/blogData';
 import SectionWrapper from '@/components/elements/SectionWrapper';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const BlogTwo: React.FC = () => {
     return (
@@ -29,8 +29,8 @@ const BlogTwo: React.FC = () => {
                             <div className="blog-two__single">
                                 <div className="blog-two__img-box">
                                     <div className="blog-two__img">
-                                        <img src={blog.image} alt="" />
-                                        <Link to={blog.to} className="blog-two__link">
+                                        <Image src={blog.image} alt="" width={410} height={300}/>
+                                        <Link href={blog.to} className="blog-two__link">
                                             <span className="sr-only"></span>
                                         </Link>
                                         <div className="blog-two__date">
@@ -42,11 +42,11 @@ const BlogTwo: React.FC = () => {
                                 </div>
                                 <div className="blog-two__content">
                                     <h3 className="blog-two__title">
-                                        <Link to={blog.to}>{blog.title}</Link>
+                                        <Link href={blog.to}>{blog.title}</Link>
                                     </h3>
                                     <p className="blog-two__text">{blog.text}</p>
                                     <div className="blog-two__read-more">
-                                        <Link to={blog.to}>
+                                        <Link href={blog.to}>
                                             Read More<span className="icon-arrow-right"></span>
                                         </Link>
                                     </div>

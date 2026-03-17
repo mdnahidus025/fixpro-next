@@ -1,5 +1,6 @@
+"use client";
+
 import React, { useState } from 'react';
-import { Link } from 'react-router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 
@@ -11,6 +12,8 @@ import projectImg5 from '@/assets/images/project/project-2-5.jpg';
 import TextAnimation from '@/components/elements/TextAnimation';
 import Lightbox from 'yet-another-react-lightbox';
 import SectionWrapper from '@/components/elements/SectionWrapper';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface ProjectItem {
     id: number;
@@ -21,17 +24,17 @@ interface ProjectItem {
 }
 
 const projectItems: ProjectItem[] = [
-    { id: 1, image: projectImg1, title: 'AC Dust Cleaning', subTitle: 'Cleaning', to: '/project-details' },
-    { id: 2, image: projectImg2, title: 'Heating Service', subTitle: 'Maintenance', to: '/project-details' },
-    { id: 3, image: projectImg3, title: 'AC Repairing', subTitle: 'Repair', to: '/project-details' },
-    { id: 4, image: projectImg4, title: 'AC Installation', subTitle: 'Technology', to: '/project-details' },
-    { id: 5, image: projectImg5, title: 'AC Checking', subTitle: 'Maintenance', to: '/project-details' },
-    { id: 6, image: projectImg1, title: 'AC Dust Cleaning', subTitle: 'Cleaning', to: '/project-details' },
-    { id: 7, image: projectImg2, title: 'Heating Service', subTitle: 'Maintenance', to: '/project-details' },
-    { id: 8, image: projectImg3, title: 'AC Repairing', subTitle: 'Repair', to: '/project-details' },
-    { id: 9, image: projectImg4, title: 'AC Installation', subTitle: 'Technology', to: '/project-details' },
-    { id: 10, image: projectImg5, title: 'AC Checking', subTitle: 'Maintenance', to: '/project-details' },
-    { id: 11, image: projectImg1, title: 'AC Dust Cleaning', subTitle: 'Cleaning', to: '/project-details' },
+    { id: 1, image: projectImg1.src, title: 'AC Dust Cleaning', subTitle: 'Cleaning', to: '/project-details' },
+    { id: 2, image: projectImg2.src, title: 'Heating Service', subTitle: 'Maintenance', to: '/project-details' },
+    { id: 3, image: projectImg3.src, title: 'AC Repairing', subTitle: 'Repair', to: '/project-details' },
+    { id: 4, image: projectImg4.src, title: 'AC Installation', subTitle: 'Technology', to: '/project-details' },
+    { id: 5, image: projectImg5.src, title: 'AC Checking', subTitle: 'Maintenance', to: '/project-details' },
+    { id: 6, image: projectImg1.src, title: 'AC Dust Cleaning', subTitle: 'Cleaning', to: '/project-details' },
+    { id: 7, image: projectImg2.src, title: 'Heating Service', subTitle: 'Maintenance', to: '/project-details' },
+    { id: 8, image: projectImg3.src, title: 'AC Repairing', subTitle: 'Repair', to: '/project-details' },
+    { id: 9, image: projectImg4.src, title: 'AC Installation', subTitle: 'Technology', to: '/project-details' },
+    { id: 10, image: projectImg5.src, title: 'AC Checking', subTitle: 'Maintenance', to: '/project-details' },
+    { id: 11, image: projectImg1.src, title: 'AC Dust Cleaning', subTitle: 'Cleaning', to: '/project-details' },
 ];
 
 const ProjectTwo: React.FC = () => {
@@ -51,7 +54,7 @@ const ProjectTwo: React.FC = () => {
                         </h3>
                     </div>
                     <div className="project-two__btn-box">
-                        <Link to="/projects" className="thm-btn">
+                        <Link href="/projects" className="thm-btn">
                             View All Projects <span className="icon-arrow-right"></span>
                         </Link>
                     </div>
@@ -82,16 +85,16 @@ const ProjectTwo: React.FC = () => {
                                 <div className="project-two__single">
                                     <div className="project-two__img-box">
                                         <div className="project-two__img">
-                                            <img src={project.image} alt="" />
+                                            <Image src={project.image} alt="project" width={379} height={583} />
                                             <div className="project-two__arrow" onClick={() => { setIndex(i); setOpenLightBox((pre: boolean) => !pre) }}>
-                                                <Link to="#" className="img-popup">
+                                                <Link href="#" className="img-popup">
                                                     <span className="icon-arrow-right"></span>
                                                 </Link>
                                             </div>
                                         </div>
                                         <div className="project-two__content">
                                             <h3 className="project-two__title">
-                                                <Link to={project.to}>{project.title}</Link>
+                                                <Link href={project.to}>{project.title}</Link>
                                             </h3>
                                             <p className="project-two__sub-title">{project.subTitle}</p>
                                         </div>
