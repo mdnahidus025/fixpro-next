@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs, Autoplay } from "swiper/modules";
-import type { Swiper as SwiperType } from 'swiper'; 
+import type { Swiper as SwiperType } from 'swiper';
 import { productsList } from "@/contents/products/productData";
 import Image from "next/image";
 
@@ -28,7 +28,7 @@ const NavForSlider: React.FC = () => {
                     {productsList.map((product) => (
                         <SwiperSlide key={product.id}>
                             <div className="product-details__img">
-                                <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="Image" />
+                                <Image src={product?.image} width={548} height={566} alt="Image" />
                             </div>
                         </SwiperSlide>
                     ))}
@@ -42,7 +42,7 @@ const NavForSlider: React.FC = () => {
 
                 </Swiper>
 
-                <div className="mb8" style={{ width: "80%", margin: "0 auto" }}>
+                <div style={{ width: "80%", margin: "0 auto", paddingTop: "8px" }}>
                     <Swiper
                         modules={[Thumbs, Autoplay,]}
                         slidesPerView={2}

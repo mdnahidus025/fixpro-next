@@ -13,8 +13,8 @@ const ProductListView: React.FC<ProductProps> = ({ product }) => {
                 <div className="row">
                     <div className="col-xl-6 col-lg-6 col-md-6">
                         <div className="single-product-style2__img">
-                            <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="" />
-                            <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="" />
+                            <Image src={product?.image} width={231} height={238} alt="" />
+                            <Image src={product?.image} width={231} height={238} alt="" />
                             {
                                 product?.isNew || product?.discouunt
                                     ?

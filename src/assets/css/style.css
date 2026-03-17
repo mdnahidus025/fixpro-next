@@ -3398,7 +3398,9 @@ ul.shadow-box li.current a {
   right: 0;
 }
 
-
+.cursor-pointer {
+  cursor: pointer;
+}
 
 /*--------------------------------------------------------------
 # End

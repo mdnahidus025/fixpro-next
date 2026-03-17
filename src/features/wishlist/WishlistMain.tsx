@@ -84,13 +84,13 @@ const WishlistMain: React.FC = () => {
                                     <td>
                                         <div className="product-box">
                                             <div className="cross-icon">
-                                                <a href="#" onClick={() => removeProduct(item?.id)}>
+                                                <span onClick={() => removeProduct(item?.id)} className="cursor-pointer">
                                                     <i className="fas fa-times"></i>
-                                                </a>
+                                                </span>
                                             </div>
 
                                             <div className="img-box">
-                                                <Image src={item.image} style={{width:"auto", height:"auto"}} alt={item.name} />
+                                                <Image src={item.image} width={120} alt={item.name} />
                                             </div>
 
                                             <h3>
@@ -107,10 +107,7 @@ const WishlistMain: React.FC = () => {
 
                                     <td>
                                         <div className="product-select">
-                                            <Link
-                                                className="thm-btn wishlist-page__btn"
-                                                href="/product-details"
-                                            >
+                                            <Link className="thm-btn wishlist-page__btn" href="/product-details" >
                                                 Select Product
                                                 <span><i className="icon-arrow-right"></i></span>
                                             </Link>

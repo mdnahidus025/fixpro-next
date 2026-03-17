@@ -42,8 +42,8 @@ const ProductCarousel: React.FC = () => {
                                     <SwiperSlide key={product.id}>
                                         <div className="single-product-style1 instyle--2">
                                             <div className="single-product-style1__img">
-                                                <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="Image" />
-                                                <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="Image" />
+                                                <Image src={product?.image} width={298} height={308} alt="Image" />
+                                                <Image src={product?.image} width={298} height={308} alt="Image" />
                                                 {
                                                     product?.isNew || product?.discouunt
                                                         ?

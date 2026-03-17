@@ -2,7 +2,7 @@
 import { ProductItem } from '@/contents/products/productData';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'; 
+import React from 'react';
 
 
 type ProductProps = {
@@ -13,8 +13,8 @@ const ProductGridView: React.FC<ProductProps> = ({ product }) => {
         <div className="col-xl-4 col-lg-6 col-md-6">
             <div className="single-product-style1">
                 <div className="single-product-style1__img">
-                    <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="" />
-                    <Image src={product?.image} style={{width:"auto", height:"auto"}} alt="" />
+                    <Image src={product?.image} width={298} height={308} alt="" />
+                    <Image src={product?.image} width={298} height={308} alt="" />
                     {
                         product?.isNew || product?.discouunt
                             ?
