@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Archivo, Titillium_Web } from "next/font/google";
+import "swiper/swiper-bundle.css";
+import 'yet-another-react-lightbox/styles.css';
+import '@/assets/css/combined.css'
+import ContextProvider from "@/components/context/ContextProvider";
+import CustomLayout from "@/components/layout/CustomLayout";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const titilliumWeb = Titillium_Web({
+  variable: "--font-titillium-web",
   subsets: ["latin"],
+  weight: ["200", "300", "400", "600", "700", "900"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -24,8 +32,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body className={`${archivo.variable} ${titilliumWeb.variable}`}>
+        <ContextProvider>
+          <CustomLayout>
+            {children}
+          </CustomLayout>
+        </ContextProvider>
       </body>
     </html>
   );
