@@ -1,21 +1,22 @@
-import React, { useState } from 'react'; 
+"use client";
+import React, { useState } from 'react';
 import BlogSidebar from './BlogSidebar';
-import { blogStandardData } from '@/contents/blog/blogData'; 
+import { blogStandardData } from '@/contents/blog/blogData';
 import Image from 'next/image';
 import Link from 'next/link';
 
- 
+
 const BlogStandartMain: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
-        const ITEMS_PER_PAGE = 3;
-        // Calculate paginated product
-        const totalPages = Math.ceil(blogStandardData.length / ITEMS_PER_PAGE);
-        const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-        const currentProducts = blogStandardData.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-        // Handle page change
-        const handlePageChange = (page: number) => {
-            if (page >= 1 && page <= totalPages) setCurrentPage(page);
-        };
+    const ITEMS_PER_PAGE = 3;
+    // Calculate paginated product
+    const totalPages = Math.ceil(blogStandardData.length / ITEMS_PER_PAGE);
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const currentProducts = blogStandardData.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    // Handle page change
+    const handlePageChange = (page: number) => {
+        if (page >= 1 && page <= totalPages) setCurrentPage(page);
+    };
     return (
         <section className="blog-list">
             <div className="container">
@@ -26,7 +27,7 @@ const BlogStandartMain: React.FC = () => {
                             {currentProducts.map((blog) => (
                                 <div className="blog-list__single" key={blog.id}>
                                     <div className="blog-list__img">
-                                        <Image src={blog.image} alt={blog.title} style={{width:"auto", height:"auto"}}/>
+                                        <Image src={blog.image} alt={blog.title} width={850} height={475} />
                                         <div className="blog-list__date">
                                             <p>{blog.day}<br />{blog.month}</p>
                                         </div>

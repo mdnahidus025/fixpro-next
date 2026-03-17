@@ -99,17 +99,15 @@ const VideoOne: React.FC = () => {
                         <br /> to use a passage believable.
                     </p>
                     <div className="video-one__video-link">
-                        <a
-                            href="#"
-                            onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")}
-                            className="video-popup"
+                        <span onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")}
+                            className="video-popup cursor-pointer"
                             rel="noreferrer"
                         >
                             <div className="video-one__video-icon">
                                 <span className="fa fa-play"></span>
                                 <i className="ripple"></i>
                             </div>
-                        </a>
+                        </span>
                     </div>
                     <div className="video-one__contact-box">
                         <FadeInAdvanced className='video-one__img-1' variant='slideInRight' delay={100} threshold={0.05}>

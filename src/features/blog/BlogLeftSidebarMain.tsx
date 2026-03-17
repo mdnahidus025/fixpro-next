@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from 'react';
-import BlogSidebar from './BlogSidebar';  
+import BlogSidebar from './BlogSidebar';
 import Image from 'next/image';
 import Link from 'next/link';
 import { blogPosts } from '@/contents/blog/blogData';
@@ -28,12 +29,12 @@ const BlogLeftSidebarMain: React.FC = () => {
                             {currentProducts.map((post) => (
                                 <div
                                     key={post.id}
-                                    className="col-xl-6 col-lg-6" 
+                                    className="col-xl-6 col-lg-6"
                                 >
                                     <div className="blog-one__single">
                                         <div className="blog-one__img-box">
                                             <div className="blog-one__img">
-                                                <Image src={post.image} alt={post.title} style={{width:"auto", height:"auto"}}/>
+                                                <Image src={post.image} alt={post.title} width={410} height={240} />
                                                 <div className="blog-one__plus">
                                                     <Link href="/blog-details">
                                                         <i className="fa fa-plus"></i>

@@ -13,13 +13,16 @@ const ContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) 
     const [currentVideoUrl, setCurrentVideoUrl] = useState<string>("");
     const [activeSection, setActiveSection] = useState<string>("home");
     const [cartCount, setCartCount] = useState<number>(4);
+
     const handleVideoClick = useCallback((
-        e: React.MouseEvent<HTMLAnchorElement>, videoUrl: string = "https://www.youtube.com/watch?v=Get7rqXYrbQ"
+        e: React.MouseEvent<HTMLElement>,
+        videoUrl: string = "https://www.youtube.com/watch?v=Get7rqXYrbQ"
     ): void => {
         e.preventDefault();
         setCurrentVideoUrl(videoUrl);
         setShowVideoPopup(true);
-    }, [setCurrentVideoUrl, setShowVideoPopup])
+    }, [setCurrentVideoUrl, setShowVideoPopup]);
+
 
     const registerSection = useCallback((id: string, element: HTMLElement | null): void => {
         sectionRefs.current[id] = element;

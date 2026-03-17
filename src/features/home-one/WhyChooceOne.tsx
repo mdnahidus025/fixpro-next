@@ -122,22 +122,20 @@ const WhyChooseOne: React.FC = () => {
                         <FadeInAdvanced className="why-choose-one__right " variant="slideInRight" delay={100}>
                             <div className="why-choose-one__img-box">
                                 <div className="why-choose-one__img">
-                                    <Image src={whyChooseOneImg1} style={{ width: "auto", height: "auto" }} alt="" />
+                                    <Image src={whyChooseOneImg1} width={250} height={450} alt="" />
                                 </div>
                                 <div className="why-choose-one__img-2">
-                                    <Image src={whyChooseOneImg2} style={{ width: "auto", height: "auto" }} alt="" />
+                                    <Image src={whyChooseOneImg2} width={330} height={450} alt="" />
                                 </div>
                                 <div className="why-choose-one__shape-1"></div>
                                 <div className="why-choose-one__video-link">
-                                    <Link href={"#"}
-                                        onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")}
-                                        className="video-popup"
-                                    >
+                                    <span onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")}
+                                        className="video-popup cursor-pointer">
                                         <div className="why-choose-one__video-icon">
                                             <span className="icon-play"></span>
                                             <i className="ripple"></i>
                                         </div>
-                                    </Link>
+                                    </span>
                                 </div>
                             </div>
                         </FadeInAdvanced>

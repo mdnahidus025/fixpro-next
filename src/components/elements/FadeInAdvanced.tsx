@@ -61,11 +61,11 @@ const FadeInAdvanced: FC<FadeInAdvancedProps> = ({
     distance = 100,
     className = "",
     triggerOnce = true,
-    threshold = 0.3,
+    threshold = 0.001,
 }) => {
     // Use different default distance for slide animations
     const isSlideAnimation = variant.startsWith("slideIn");
-    const finalDistance = isSlideAnimation && distance === 100 ? 350 : distance;
+    const finalDistance = isSlideAnimation && distance === 100 ? 330 : distance;
     const finalDuration =
         isSlideAnimation && duration === 1500 ? 2100 : duration;
 

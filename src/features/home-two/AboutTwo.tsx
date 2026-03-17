@@ -79,10 +79,10 @@ const AboutTwo: React.FC = () => {
                         >
                             <div className="about-two__img-box">
                                 <div className="about-two__img">
-                                    <Image src={aboutTwoImg1} style={{ width: "auto", height: "auto" }} alt="" />
+                                    <Image src={aboutTwoImg1} width={330} height={465} alt="" />
                                 </div>
                                 <div className="about-two__img-2">
-                                    <Image src={aboutTwoImg2} style={{ width: "auto", height: "auto" }} alt="" />
+                                    <Image src={aboutTwoImg2} width={270} alt="" />
                                 </div>
                                 <div className="about-two__experience-box">
                                     <div className="about-two__count-box">

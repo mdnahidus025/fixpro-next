@@ -10,7 +10,7 @@ export interface contextType {
     setShowVideoPopup: React.Dispatch<React.SetStateAction<boolean>>;
     currentVideoUrl: string;
     setCurrentVideoUrl: React.Dispatch<React.SetStateAction<string>>;
-    handleVideoClick: (e: React.MouseEvent<HTMLAnchorElement>, videoUrl?: string) => void;
+    handleVideoClick: (e: React.MouseEvent<HTMLElement>, videoUrl?: string) => void;
     activeSection: string;
     setActiveSection: React.Dispatch<React.SetStateAction<string>>;
     cartCount: number;

@@ -106,7 +106,7 @@ const ServiceTwo: React.FC = () => {
                                     <div className="services-two__single">
                                         <div className="services-two__img-box">
                                             <div className="services-two__img">
-                                                <Image src={service.image} style={{ width: "auto", height: "auto" }} alt="" />
+                                                <Image src={service.image} width={355} height={253} alt="" />
                                             </div>
                                             <div className="services-two__hover-content">
                                                 <p className="services-two__hover-text">{service.hoverText}</p>

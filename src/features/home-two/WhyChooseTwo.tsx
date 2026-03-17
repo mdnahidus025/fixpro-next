@@ -61,7 +61,7 @@ const WhyChooseTwo: React.FC = () => {
                         >
                             <div className="why-choose-two__img-box">
                                 <div className="why-choose-two__img-1">
-                                    <Image src={whyChooseTwoImg1} style={{ width: "auto", height: "auto" }} alt="" />
+                                    <Image src={whyChooseTwoImg1} width={470} height={483} alt="" />
                                     <div className="why-choose-two__video-link">
                                         <Link
                                             href="#"

@@ -78,7 +78,7 @@ const TeamOne: React.FC = () => {
                             <div className="team-one__single">
                                 <div className="team-one__img-box">
                                     <div className="team-one__img">
-                                        <Image src={member.image} style={{width:"auto", height:"auto"}} alt={member.name} />
+                                        <Image src={member.image} width={278} alt={member.name} />
                                     </div>
                                 </div>
                                 <div className="team-one__content">

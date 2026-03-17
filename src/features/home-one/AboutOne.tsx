@@ -64,13 +64,13 @@ const AboutOne: React.FC<SecProp> = ({ secClass = "" }) => {
                         >
                             <div className="about-one__img-box">
                                 <div className="about-one__img">
-                                    <Image src={aboutOneImg1} alt="" style={{width:"auto", height:"auto"}}/>
+                                    <Image src={aboutOneImg1} alt="" width={370} height={532} />
                                 </div>
                                 <div className="about-one__img-2">
-                                    <Image src={aboutOneImg2} alt="" style={{width:"auto", height:"auto"}}/>
+                                    <Image src={aboutOneImg2} alt="" width={280} height={380} />
                                 </div>
                                 <div className="about-one__shape-2 float-bob-y">
-                                    <Image src={aboutOneShape2} alt="" style={{width:"auto", height:"auto"}}/>
+                                    <Image src={aboutOneShape2} alt="" width={100} height={100} />
                                 </div>
                                 <div className="about-one__experience-box">
                                     <div className="about-one__count-box">
@@ -135,15 +135,15 @@ const AboutOne: React.FC<SecProp> = ({ secClass = "" }) => {
                                 </div>
                                 <div className="about-one__video-box">
                                     <div className="about-one__video-link">
-                                        <a
+                                        <span
                                             onClick={(e) => handleVideoClick(e, "https://www.youtube.com/watch?v=Get7rqXYrbQ")}
-                                            className="video-popup"
+                                            className="video-popup cursor-pointer"
                                         >
                                             <div className="about-one__video-icon">
                                                 <span className="icon-play"></span>
                                                 <i className="ripple"></i>
                                             </div>
-                                        </a>
+                                        </span>
                                     </div>
                                     <p className="about-one__video-text">Watch Our Support</p>
                                 </div>

@@ -1,4 +1,6 @@
-import React from 'react'; 
+"use client";
+
+import React from 'react';
 import BlogSidebar from './BlogSidebar';
 import BlogDetailsImg1 from '@/assets/images/blog/blog-details-img-1.jpg';
 import BlogDetailsImgBoxImg1 from '@/assets/images/blog/blog-details-img-box-img-1.jpg';
@@ -9,6 +11,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const BlogDetailsMain: React.FC = () => {
+
+    const handleComment = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+    }
     return (
         <section className="blog-details">
             <div className="container">
@@ -16,7 +22,7 @@ const BlogDetailsMain: React.FC = () => {
                     <div className="col-xl-8 col-lg-7">
                         <div className="blog-details__left">
                             <div className="blog-details__img">
-                                <Image src={BlogDetailsImg1} style={{width:"auto", height:"auto"}} alt='Image' />
+                                <Image src={BlogDetailsImg1} width={850} height={509} alt='Image' />
                                 <div className="blog-details__date">
                                     <p>12<br />Nov</p>
                                 </div>
@@ -54,12 +60,12 @@ const BlogDetailsMain: React.FC = () => {
                                     <div className="row">
                                         <div className="col-xl-6">
                                             <div className="blog-details__img-box-img">
-                                                <Image src={BlogDetailsImgBoxImg1} style={{width:"auto", height:"auto"}} alt=''/>
+                                                <Image src={BlogDetailsImgBoxImg1} width={410} height={245} alt='' />
                                             </div>
                                         </div>
                                         <div className="col-xl-6">
                                             <div className="blog-details__img-box-img">
-                                                <Image src={BlogDetailsImgBoxImg2} style={{width:"auto", height:"auto"}} alt=''/>
+                                                <Image src={BlogDetailsImgBoxImg2} width={410} height={245} alt='' />
                                             </div>
                                         </div>
                                     </div>
@@ -92,7 +98,7 @@ const BlogDetailsMain: React.FC = () => {
                                 <div className="comment-one">
                                     <div className="comment-one__single">
                                         <div className="comment-one__image">
-                                            <Image src={Comment11} width={70} height={70} alt=''/>
+                                            <Image src={Comment11} width={70} height={70} alt='' />
                                         </div>
                                         <div className="comment-one__content">
                                             <h3>Theresa Webb</h3>
@@ -109,7 +115,7 @@ const BlogDetailsMain: React.FC = () => {
                                     </div>
                                     <div className="comment-one__single">
                                         <div className="comment-one__image">
-                                            <Image src={Comment12} width={70} height={70} alt=''/>
+                                            <Image src={Comment12} width={70} height={70} alt='' />
                                         </div>
                                         <div className="comment-one__content">
                                             <h3>Cameron Williamson</h3>
@@ -129,7 +135,7 @@ const BlogDetailsMain: React.FC = () => {
                                     <h3 className="comment-form__title">Leave A Reply</h3>
                                     <p className="comment-form__text">By using form u agree with the message sorage, you can
                                         contact us directly now</p>
-                                    <form className="comment-one__form contact-form-validated" onSubmit={(e) => e.preventDefault()}>
+                                    <form className="comment-one__form contact-form-validated" onSubmit={handleComment}>
                                         <div className="row">
                                             <div className="col-xl-6">
                                                 <div className="comment-form__input-box">
