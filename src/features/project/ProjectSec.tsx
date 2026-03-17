@@ -107,7 +107,7 @@ const ProjectSec: React.FC = () => {
                             <div className="project-one__single">
                                 <div className="project-one__img-box">
                                     <div className="project-one__img">
-                                        <Image src={project.image} style={{ width: "auto", height: "auto" }} alt={`${project.subTitle} - ${project.title}`} />
+                                        <Image src={project.image} width={300} height={333} alt={`${project.subTitle} - ${project.title}`} />
                                         <div className="project-one__arrow" onClick={() => { setIndex(idx); setOpenLightBox(true) }} >
                                             <Link href={"#"} className="img-popup" aria-label={`View full image of ${project.title}`} >
                                                 <span className="icon-arrow-right"></span>

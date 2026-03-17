@@ -90,7 +90,7 @@ const TestimonialsSec: React.FC = () => {
                                                 <Image
                                                     src={testimonial.image}
                                                     alt={`${testimonial.name} - ${testimonial.subTitle}`}
-                                                    style={{width:"auto", height:"auto"}}
+                                                    width={80} height={80}
                                                 />
                                             </div>
                                         </div>

@@ -60,7 +60,7 @@ const LightingFixturesMain: React.FC = () => {
                         <div className="service-details__left">
 
                             <div className="service-details__img">
-                                <Image src={serviceDetailsImg1} style={{width:"auto", height:"auto"}} alt="Lighting & Fixtures" />
+                                <Image src={serviceDetailsImg1} width={850} alt="Lighting & Fixtures" />
                             </div>
 
                             <h3 className="service-details__title-1">Lighting & Fixtures</h3>
@@ -95,7 +95,7 @@ const LightingFixturesMain: React.FC = () => {
                                         <div key={item.id} className="col-xl-6">
                                             <div className="service-details__img-box-single">
                                                 <div className="service-details__img-box-img">
-                                                    <Image src={item.image} style={{width:"auto", height:"auto"}} alt={item.imageAlt} />
+                                                    <Image src={item.image}width={410} alt={item.imageAlt} />
                                                 </div>
                                                 <div className="service-details__img-box-content">
                                                     <div className="service-details__img-box-content-icon-and-title">
